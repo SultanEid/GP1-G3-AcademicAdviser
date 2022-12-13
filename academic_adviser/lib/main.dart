@@ -1,4 +1,4 @@
-import 'package:academic_adviser/pages/StudentDashboard/StDashboard/StDashboardPage.dart';
 import 'package:flutter/material.dart';
+import 'pages/Wrapper.dart';
 
-void main() => runApp(StDashboardPage());
+void main() => runApp(MaterialApp(home: Wrapper(),));

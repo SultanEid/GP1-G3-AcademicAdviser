@@ -13,6 +13,7 @@ dependencies:
   fl_chart: ^0.36.4
   syncfusion_flutter_gauges: ^18.2.44
   firebase_core: ^2.3.0
+  flutter_screenutil: ^5.6.0
 
 dev_dependencies:
   flutter_test:
@@ -22,14 +23,20 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/ProfileImages/4000951Avater.jpg
+    - assets/images/BackgroundImage/BackgroundImage.png
+    - assets/images/BackgroundImage/SignInCard.png
+    - assets/images/Logos/LogoWithoutStrapline.png
   fonts:
     - family: Tajawal
       fonts:
-        - asset: assets/fonts/Tajawal-Black.ttf
-        - asset: assets/fonts/Tajawal-Bold.ttf
-        - asset: assets/fonts/Tajawal-ExtraBold.ttf
-        - asset: assets/fonts/Tajawal-ExtraLight.ttf
-        - asset: assets/fonts/Tajawal-Light.ttf
-        - asset: assets/fonts/Tajawal-Medium.ttf
-        - asset: assets/fonts/Tajawal-Regular.ttf
+        - asset: assets/fonts/tajawal/Tajawal-Black.ttf
+        - asset: assets/fonts/tajawal/Tajawal-Bold.ttf
+        - asset: assets/fonts/tajawal/Tajawal-ExtraBold.ttf
+        - asset: assets/fonts/tajawal/Tajawal-ExtraLight.ttf
+        - asset: assets/fonts/tajawal/Tajawal-Light.ttf
+        - asset: assets/fonts/tajawal/Tajawal-Medium.ttf
+        - asset: assets/fonts/tajawal/Tajawal-Regular.ttf
           style: italic
+    - family: Unispace
+      fonts:
+        - asset: assets/fonts/unispace/unispace bd.ttf
