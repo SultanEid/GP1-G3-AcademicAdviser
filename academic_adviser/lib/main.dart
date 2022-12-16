@@ -1,4 +1,19 @@
 import 'package:flutter/material.dart';
 import 'pages/Wrapper.dart';
 
-void main() => runApp(MaterialApp(home: Wrapper(),));
+void main() => runApp(MyApp());
+
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Wrapper(),
+    );
+  }
+}
+

@@ -7,6 +7,8 @@ class SignInInputSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SignInTextField emailTextField = SignInTextField(labelTextPar: 'Email Address',hintTextPar: 'name@examble.com',);
+    SignInTextField passwordTextField = SignInTextField(labelTextPar: 'Password',hintTextPar: 'password',);
     return Container(
       width: 588.w,
       height: 590.h,
@@ -26,11 +28,11 @@ class SignInInputSection extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          SignInTextField(labelTextPar: 'Email Address',hintTextPar: 'name@examble.com',),
+          emailTextField,
           SizedBox(
             height: 35.h,
           ),
-          SignInTextField(labelTextPar: 'Password',hintTextPar: 'password',),
+          passwordTextField,
           Container(
             width: 360.w,
             height: 60.h,

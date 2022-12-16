@@ -1,3 +1,4 @@
+import 'package:academic_adviser/pages/Services/Services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'SignIn/SignIn.dart';
@@ -14,7 +15,7 @@ class Wrapper extends StatelessWidget {
       builder: (context, child) {
         return Directionality(
           textDirection: TextDirection.ltr,
-          child: SignIn(),
+          child: Services(),
         );
       },
     );
