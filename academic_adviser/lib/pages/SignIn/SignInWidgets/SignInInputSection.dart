@@ -1,12 +1,23 @@
 import 'package:academic_adviser/pages/SignIn/SignInWidgets/SignInTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:academic_adviser/pages/Services/Authentication.dart';
 
 class SignInInputSection extends StatelessWidget {
-  const SignInInputSection({Key? key}) : super(key: key);
+   SignInInputSection({Key? key}) : super(key: key){
+
+   }
+  SignInTextField EmailTextInput = SignInTextField(labelTextPar: 'Email Address',hintTextPar: 'name@examble.com', obscure: false,);
+  SignInTextField PasswordTextInput = SignInTextField(labelTextPar: 'Password',hintTextPar: 'password', obscure: true,);
+
+String? email;
+String? password;
+bool loading =false;
 
   @override
   Widget build(BuildContext context) {
+    email = EmailTextInput.textInput;
+    password = PasswordTextInput.textInput;
     return Container(
       width: 588.w,
       height: 590.h,
@@ -26,17 +37,18 @@ class SignInInputSection extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          SignInTextField(labelTextPar: 'Email Address',hintTextPar: 'name@examble.com',),
+        EmailTextInput,
           SizedBox(
             height: 35.h,
           ),
-          SignInTextField(labelTextPar: 'Password',hintTextPar: 'password',),
+          PasswordTextInput,
           Container(
             width: 360.w,
             height: 60.h,
             alignment: Alignment.topRight,
             child: TextButton(
-                onPressed: () {},
+                onPressed: (){
+                },
                 child: Text(
                   'need help?',
                   textAlign: TextAlign.right,
@@ -71,7 +83,9 @@ class SignInInputSection extends StatelessWidget {
               width: 360.w,
               height: 42.h,
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    dynamic signInResult = await AuthService().SignInWithEmailPassword(EmailTextInput.textInput!,PasswordTextInput.textInput!);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,
