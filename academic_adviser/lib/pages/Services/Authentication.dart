@@ -21,12 +21,15 @@ class AuthService {
     try {
       UserCredential SignInResult = await _Auth.signInWithEmailAndPassword(email: Email, password: Password);
       User? UserResult = SignInResult.user;
-      await DatabaseService(uid: UserResult!.uid).updateUserData('Yamin Alrehaili');
+      //if you want to update the data manually using method or even taking user input and change based on it
+      // the method is has varibility based on the collection we want to modify and also the data we have specified to change
+      //await DatabaseService(uid: UserResult!.uid).updateUserData('Yamin Alrehaili');
       return _CoustumUserData(UserResult);
     }catch(e){
       print(e.toString());
     }
   }
+
 
   //Sign Out
   Future SignOut() async {

@@ -1,14 +1,16 @@
 import 'package:academic_adviser/Database/Database.dart';
+import 'package:academic_adviser/TestWidgets/ProfileWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:academic_adviser/Models/DatabaseVariable.dart';
 import 'package:academic_adviser/Database/Database.dart';
 import 'package:academic_adviser/pages/Services/Authentication.dart';
 import 'package:academic_adviser/Reusable/Buttons.dart';
-import 'package:academic_adviser/TestWidgets/Profile.dart';
+import 'package:academic_adviser/TestWidgets/ProfileWidget.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final String UID;
+  HomeScreen({required this.UID});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        body: Profile(),
+        body: ProfileWidget(UID: UID,collecionName: "Profile",),
       ),
     );
   }

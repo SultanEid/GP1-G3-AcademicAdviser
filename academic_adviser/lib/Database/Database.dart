@@ -21,6 +21,10 @@ class DatabaseService {
     return ProfileCollection.snapshots().map(_ProfileFromSnapshot);
   }
 
+  Stream <QuerySnapshot> get ProfileQSnapshot {
+    return ProfileCollection.snapshots();
+  }
+
   Future updateUserData(String Name) async{
     return await ProfileCollection.doc(uid).set({
       'Name' : Name,

@@ -1,7 +1,11 @@
+import 'package:academic_adviser/Models/User.dart';
+import 'package:academic_adviser/TestWidgets/ProfileWidget.dart';
+import 'package:academic_adviser/pages/ServicesPage/Services.dart';
 import 'package:academic_adviser/pages/SignIn/SignInWidgets/SignInTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:academic_adviser/pages/Services/Authentication.dart';
+import '../../../TestWidgets/Profile.dart';
 
 class SignInInputSection extends StatelessWidget {
    SignInInputSection({Key? key}) : super(key: key){
@@ -84,7 +88,8 @@ bool loading =false;
               height: 42.h,
               child: TextButton(
                   onPressed: () async {
-                    dynamic signInResult = await AuthService().SignInWithEmailPassword(EmailTextInput.textInput!,PasswordTextInput.textInput!);
+                    TheUser signInResult = await AuthService().SignInWithEmailPassword(EmailTextInput.textInput!,PasswordTextInput.textInput!);
+                    print(signInResult.uid);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,

@@ -21,7 +21,7 @@ class Wrapper extends StatelessWidget {
         if(user==null){
            Choice =  SignIn();
         }else{
-          Choice = HomeScreen();
+          Choice = HomeScreen(UID: user.uid,);
         }
         return Directionality(
           textDirection: TextDirection.ltr,
