@@ -21,7 +21,6 @@ class AuthService {
     try {
       UserCredential SignInResult = await _Auth.signInWithEmailAndPassword(email: Email, password: Password);
       User? UserResult = SignInResult.user;
-      await DatabaseService(uid: UserResult!.uid).updateUserData('Yamin Alrehaili');
       return _CoustumUserData(UserResult);
     }catch(e){
       print(e.toString());
