@@ -2,6 +2,10 @@ import 'package:academic_adviser/pages/Services/ServicesWidget/ServicesCard.dart
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
+<<<<<<< Updated upstream:academic_adviser/lib/pages/Services/Services.dart
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';   
+>>>>>>> Stashed changes:academic_adviser/lib/pages/ServicesPage/Services.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
