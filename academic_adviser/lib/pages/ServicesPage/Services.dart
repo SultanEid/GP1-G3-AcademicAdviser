@@ -1,6 +1,9 @@
+<<<<<<< Updated upstream:academic_adviser/lib/pages/ServicesPage/Services.dart
 import 'package:academic_adviser/Database/Database.dart';
 import 'package:academic_adviser/Models/DatabaseVariable.dart';
 import 'package:academic_adviser/pages/Services/Authentication.dart';
+=======
+>>>>>>> Stashed changes:academic_adviser/lib/pages/Services/Services.dart
 import 'package:academic_adviser/pages/ServicesPage/ServicesWidget/ServicesCard.dart';
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
@@ -122,7 +125,7 @@ class Services extends StatelessWidget {
                 height: 41.1.h,
               ),
               Text(
-                'Our Services Features',
+                'Our ServicesPage Features',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 50.sp,

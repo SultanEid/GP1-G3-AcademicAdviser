@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
+=======
+import 'package:academic_adviser/pages/Profile/Profile.dart';
+>>>>>>> Stashed changes
 import 'package:academic_adviser/pages/ServicesPage/Services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,17 +21,29 @@ class Wrapper extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
+<<<<<<< Updated upstream
+=======
+    /*
+>>>>>>> Stashed changes
         Widget Choice;
         if(user==null){
            Choice =  SignIn();
         }else{
-          Choice = Services();
+          Choice = ServicesPage();
         }
+<<<<<<< Updated upstream
         return Directionality(
           textDirection: TextDirection.ltr,
           child: Container(
             child: Choice,
           ),
+=======
+
+     */
+        return Directionality(
+          textDirection: TextDirection.ltr,
+            child: Profile(),
+>>>>>>> Stashed changes
         );
       },
     );
