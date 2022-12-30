@@ -1,10 +1,7 @@
-<<<<<<< Updated upstream
-import 'package:academic_adviser/pages/SignIn/SignInWidgets/Backgraound.dart';
-=======
 
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
->>>>>>> Stashed changes
 import 'package:academic_adviser/pages/SignIn/SignInWidgets/SignInCard.dart';
+import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,3 +30,4 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
+
