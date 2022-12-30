@@ -31,7 +31,6 @@ class Wrapper extends StatelessWidget {
         }else{
           Choice = ServicesPage();
         }
-<<<<<<< Updated upstream
         return Directionality(
           textDirection: TextDirection.ltr,
           child: Container(
