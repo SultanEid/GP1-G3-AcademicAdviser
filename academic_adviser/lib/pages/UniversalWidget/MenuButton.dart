@@ -2,16 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MenuButton extends StatelessWidget {
-  const MenuButton({Key? key, required this.buttonLabel, required this.icon}) : super(key: key);
+  const MenuButton({Key? key, required this.buttonLabel, required this.icon, required this.route}) : super(key: key);
   final String buttonLabel;
   final IconData icon;
+  final Widget? route;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: 444.w,
       height: 34.h,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () {
+          if (route != null) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => route!));
+          }else {
+            Navigator.pop(context);
+          }
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,

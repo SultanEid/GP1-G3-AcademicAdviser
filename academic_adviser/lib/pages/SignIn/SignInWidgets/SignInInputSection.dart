@@ -1,14 +1,20 @@
+import 'package:academic_adviser/Models/User.dart';
+import 'package:academic_adviser/pages/Services/Authentication.dart';
 import 'package:academic_adviser/pages/SignIn/SignInWidgets/SignInTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInInputSection extends StatelessWidget {
-  const SignInInputSection({Key? key}) : super(key: key);
-
+  //const SignInInputSection({Key? key}) : super(key: key);
+  SignInTextField EmailTextField = SignInTextField(labelTextPar: 'Email Address',hintTextPar: 'name@examble.com', obscure: false,);
+  SignInTextField PasswordTextField = SignInTextField(labelTextPar: 'Password',hintTextPar: 'password', obscure: true,);
+  String? email;
+  String? password;
+  bool loading =false;
   @override
   Widget build(BuildContext context) {
-    SignInTextField emailTextField = SignInTextField(labelTextPar: 'Email Address',hintTextPar: 'name@examble.com',);
-    SignInTextField passwordTextField = SignInTextField(labelTextPar: 'Password',hintTextPar: 'password',);
+    email = EmailTextField.textInput;
+    password = PasswordTextField.textInput;
     return Container(
       width: 588.w,
       height: 590.h,
@@ -28,11 +34,11 @@ class SignInInputSection extends StatelessWidget {
           SizedBox(
             height: 30.h,
           ),
-          emailTextField,
+          EmailTextField,
           SizedBox(
             height: 35.h,
           ),
-          passwordTextField,
+          PasswordTextField,
           Container(
             width: 360.w,
             height: 60.h,
@@ -73,7 +79,10 @@ class SignInInputSection extends StatelessWidget {
               width: 360.w,
               height: 42.h,
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    TheUser signInResult = await AuthService().SignInWithEmailPassword(EmailTextField.textInput!,PasswordTextField.textInput!);
+                    print(signInResult.uid);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent,

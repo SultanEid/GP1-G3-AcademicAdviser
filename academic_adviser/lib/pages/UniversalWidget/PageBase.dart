@@ -1,6 +1,8 @@
+import 'package:academic_adviser/pages/Profile/Profile.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,7 +20,6 @@ class ScaffoldPlus extends StatelessWidget {
         BackgroundWidget(),
         Scaffold(
         backgroundColor: Colors.transparent,
-        //extendBodyBehindAppBar: true,
         drawer: SizedBox(
           width: 513.w,
           child: Drawer(
@@ -58,11 +59,13 @@ class ScaffoldPlus extends StatelessWidget {
                 },
                 onSelected: (value) async {
                   if (value == 0) {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Profile(uid: FirebaseAuth.instance.currentUser?.uid)));
                   } else if (value == 1) {
                     await AuthService().SignOut();
                   }
                 },
               ),
+              /*
               Container(
                 alignment: Alignment.center,
                 width: 228.w,
@@ -96,14 +99,15 @@ class ScaffoldPlus extends StatelessWidget {
                       }
                     }),
               ),
+               */
             ],
           ),
         ),
         body: Stack(
           children: children,
-          alignment: Alignment.center,
+          alignment: Alignment.topCenter,
         )
-    )
+    ),
       ],
     );
   }

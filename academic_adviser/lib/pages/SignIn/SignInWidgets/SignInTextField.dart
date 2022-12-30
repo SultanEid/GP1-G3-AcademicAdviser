@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInTextField extends StatelessWidget {
-  SignInTextField({Key? key, required this.labelTextPar, required this.hintTextPar}) : super(key: key);
+  SignInTextField({Key? key, required this.labelTextPar, required this.hintTextPar, required this.obscure , }) : super(key: key);
   final String labelTextPar;
   final String hintTextPar;
+  final bool obscure;
+  String? textInput;
   //----------------------------
   String? val;
 
@@ -17,7 +19,7 @@ class SignInTextField extends StatelessWidget {
           height: 60.h,
           child: TextField(
             onChanged: (input){
-              val = input;
+              textInput = input;
             },
             decoration: InputDecoration(
               labelText: this.labelTextPar,
@@ -27,6 +29,7 @@ class SignInTextField extends StatelessWidget {
               floatingLabelStyle:
               const TextStyle(color: Colors.black),
             ),
+            obscureText: obscure,
           ),
         ),
         Container(

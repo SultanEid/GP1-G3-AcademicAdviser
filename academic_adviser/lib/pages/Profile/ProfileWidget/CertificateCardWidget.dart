@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CertificateCardWidget extends StatelessWidget {
-  const CertificateCardWidget( {Key? key, required this.certificate}) : super(key: key);
-  final Certificate certificate;
+  const CertificateCardWidget( {Key? key , required this.CertificatesInfoIndex}) : super(key: key);
+  final Certificate CertificatesInfoIndex;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,7 +41,7 @@ class CertificateCardWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  certificate.certificaTetitle,
+                  CertificatesInfoIndex.certificateTitle!,
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'Tajawal',
@@ -51,7 +51,7 @@ class CertificateCardWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  certificate.certificaIssuer,
+                  CertificatesInfoIndex.certificaIssuer!,
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontFamily: 'Tajawal',
@@ -64,7 +64,7 @@ class CertificateCardWidget extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.bottomLeft,
                     child: Text(
-                      certificate.date,
+                      CertificatesInfoIndex.date!,
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontFamily: 'Tajawal',
