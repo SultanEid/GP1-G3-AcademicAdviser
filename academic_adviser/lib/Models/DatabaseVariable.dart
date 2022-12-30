@@ -1,8 +1,8 @@
 class DatabaseVariable {
 
-  final String Name;
+   late String? Name;
 
-  DatabaseVariable({ required this.Name});
+  DatabaseVariable({ this.Name});
 
 
 

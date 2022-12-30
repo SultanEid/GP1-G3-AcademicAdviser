@@ -1,10 +1,12 @@
+import 'package:academic_adviser/pages/StudentList/StudentsList.dart';
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CardButton extends StatelessWidget {
-  const CardButton({Key? key, required this.label}) : super(key: key);
+  const CardButton({Key? key, required this.label , required this.Route}) : super(key: key);
   final String label;
+  final Widget Route;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,7 +25,9 @@ class CardButton extends StatelessWidget {
         width: 243.w,
         height: 25.h,
         child: TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context ,MaterialPageRoute(builder: (context) => Route));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
