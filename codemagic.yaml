@@ -4,6 +4,6 @@ workflows:
     - name: create project
       working_directory: /academic_adviser
       script: |
-        flutter run
+        echo "flutter build"
 
 
