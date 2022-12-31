@@ -1,8 +1,9 @@
 workflows:
-  my-workflow:
+  flutterFlow:
     scripts:
       - name: setup project
         script: |
-            flutter create.
-            flutter run
+            cd academic_adviser && flutter create.
+            cd academic_adviser && flutter run
+
 
