@@ -2,4 +2,4 @@ workflows:
   my-workflow:
     scripts:
       - name: say hello
-        script: echo "Hello Codemagic!"
+        script: cd academic_adviser && flutter run
