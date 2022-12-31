@@ -1,9 +1,11 @@
 workflows:
   flutterFlow:
     scripts:
-      - name: setup project
-        script: |
-            cd academic_adviser && flutter create.
-            cd academic_adviser && flutter run
+    - name: create project
+    working_directory: /academic_adviser
+    script: flutter create .
+    - name: run project
+    working_directory: /academic_adviser
+    script: flutter run
 
 
