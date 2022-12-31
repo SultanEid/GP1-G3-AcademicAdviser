@@ -16,13 +16,13 @@ jobs:
       - checkout
       - run:
           name: "set working directory"
-          command: "cd academic_advising"
+          command: "cd academic_adviser"
       - run:
           name: "flutter create"
           command: "flutter create ."
       - run:
-          name: "flutte run"
-          command: "flutter run"
+          name: "flutte build"
+          command: "flutter pub get"
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
