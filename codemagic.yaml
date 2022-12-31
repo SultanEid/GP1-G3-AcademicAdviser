@@ -2,10 +2,9 @@ workflows:
   flutterFlow:
     scripts:
     - name: create project
-    working_directory: /academic_adviser
-    script: flutter create .
-    - name: run project
-    working_directory: /academic_adviser
-    script: flutter run
+      working_directory: /academic_adviser
+      script: |
+        flutter create .
+        flutter run
 
 
