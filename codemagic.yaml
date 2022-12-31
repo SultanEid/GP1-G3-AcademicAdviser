@@ -2,4 +2,4 @@ workflows:
   my-workflow:
     scripts:
       - name: say hello
-        script: cd academic_adviser && flutter create . && flutter run
+        script: cd academic_adviser && flutter create . && flutter run -d Chrome
