@@ -1,5 +1,5 @@
 workflows:
   my-workflow:
     scripts:
-      - name: say hello
+      - name: build-and-run-flutter
         script: cd academic_adviser && flutter create . && flutter pub get
