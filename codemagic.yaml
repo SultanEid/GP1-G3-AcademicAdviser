@@ -4,7 +4,6 @@ workflows:
     - name: create project
       working_directory: /academic_adviser
       script: |
-        flutter create .
         flutter run
 
 
