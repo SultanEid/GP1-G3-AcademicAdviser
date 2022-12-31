@@ -1,9 +1,10 @@
 workflows:
   flutterFlow:
-    scripts:
-    - name: create project
-      working_directory: /academic_adviser
+    working_directory: /academic_adviser
+    scripts:    
+    - name: create project      
       script: |
         echo "flutter build"
+
 
 
