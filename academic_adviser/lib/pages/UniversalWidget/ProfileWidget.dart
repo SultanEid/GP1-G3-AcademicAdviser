@@ -13,7 +13,7 @@ class ProfileWidget extends StatelessWidget {
         flex: 20,
         child: Center(
           child: Text(
-            Profilelistindex.Name,
+            '${Profilelistindex.Name}',
             textAlign: TextAlign.left,
             style: TextStyle(
                 fontSize: 21.sp,
