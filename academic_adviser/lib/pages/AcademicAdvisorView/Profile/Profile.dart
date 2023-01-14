@@ -1,10 +1,10 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Profile/ProfileWidget/BrifeWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart';
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'ProfileWidget/BrifeWidget.dart';
+import 'ProfileWidget/CertificatesWidget.dart';
 import 'ProfileWidget/ProfileWidget.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -13,7 +13,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScaffoldPlus([
+    return ScaffoldPlus(
+        [
       Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -39,6 +40,8 @@ class ProfilePage extends StatelessWidget {
           ),
         ],
       ),
-    ]);
+    ],
+      user: user,
+    );
   }
 }

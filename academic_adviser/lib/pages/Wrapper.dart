@@ -14,8 +14,8 @@ import '../Models/Certificate.dart';
 import '../Models/Course.dart';
 import '../Models/Note.dart';
 import '../Models/Score.dart';
+import 'AcademicAdvisorView/ServicesPage/Services.dart';
 import 'LoadingWidgetA/Loadingwidgets.dart';
-import 'ServicesPage/Services.dart';
 import 'SignIn/SignIn.dart';
 import 'dart:developer';
 
@@ -40,9 +40,8 @@ class Wrapper extends StatefulWidget {
 class _WrapperState extends State<Wrapper> {
 
   LoadingData loadingData = LoadingData();
-  AcademicAdvisor A =AcademicAdvisor(uid: "", firstName: "", lastName: "", academicID: "", academicEmail: "", phone: "", profile:Profile(role: "" ,department: "",educationalCertificates: []), student:[]);
+  AcademicAdvisor Advisor =AcademicAdvisor(uid: "", firstName: "", lastName: "", academicID: "", academicEmail: "", phone: "", profile:Profile(role: "" ,department: "",educationalCertificates: []), student:[]);
   bool loadingIndecator=false;
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,16 +58,17 @@ class _WrapperState extends State<Wrapper> {
           if(loadingIndecator==false){
             Choice=LoadingWidgets();
 
-            Future.delayed(const Duration(seconds: 5), (){
-              A=loadingData.Readings();
-              loadingIndecator=true;
+            Future.delayed(const Duration(seconds: 5), () async{
+              Advisor= await loadingData.Readings();
+
               setState(() {
                 loadingIndecator=true;
               });
+
             });
 
           }else{
-            Choice = LoadingWidget(A: A,);
+            Choice = Services(Advisor :Advisor);
           }}
         return Directionality(
           textDirection: TextDirection.ltr,

@@ -1,8 +1,0 @@
-workflows:
-  my-workflow:
-    scripts:
-      - name: setup project
-        script: |
-            flutter create.
-            flutter run
-

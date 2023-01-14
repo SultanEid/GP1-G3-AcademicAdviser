@@ -1,30 +1,38 @@
+import 'dart:js_util';
 
-import 'package:academic_adviser/Models/AcademicAdvisor.dart';
-import 'package:academic_adviser/Models/Alert.dart';
-import 'package:academic_adviser/Models/Appointment.dart';
-import 'package:academic_adviser/Models/Attendance.dart';
-import 'package:academic_adviser/Models/Certificate.dart';
-import 'package:academic_adviser/Models/Course.dart';
-import 'package:academic_adviser/Models/Note.dart';
-import 'package:academic_adviser/Models/Office.dart';
-import 'package:academic_adviser/Models/OfficeHours.dart';
-import 'package:academic_adviser/Models/Profile.dart';
-import 'package:academic_adviser/Models/Score.dart';
-import 'package:academic_adviser/Models/Student.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Scores/Scores.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/StudentList/StudentsList.dart';
+import 'package:academic_adviser/Models/DatabaseVariable.dart' as GlobalVaribales;
+import 'package:academic_adviser/Models/AAAUser.dart';
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
-import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
+import 'package:academic_adviser/pages/AcademicAdvisorView/Menu.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+import '../../../Models/AcademicAdvisor.dart';
+import '../../../Models/Alert.dart';
+import '../../../Models/Appointment.dart';
+import '../../../Models/Attendance.dart';
+import '../../../Models/Certificate.dart';
+import '../../../Models/Course.dart';
+import '../../../Models/Note.dart';
+import '../../../Models/Office.dart';
+import '../../../Models/OfficeHours.dart';
+import '../../../Models/Profile.dart';
+import '../../../Models/Score.dart';
+import '../../../Models/Student.dart';
 import '../Dashboard/Dashboard.dart';
 import '../Notes/Note.dart';
 import '../Profile/Profile.dart';
 import '../Reports/Reports.dart';
+import '../Scores/Scores.dart';
+import '../StudentList/StudentsList.dart';
+import 'ServicesWidget/ServicesCard.dart';
 
 class Services extends StatelessWidget {
+  Services({ required this.Advisor});
+    AcademicAdvisor Advisor;
  AcademicAdvisor dataFill() {
    Profile AcadimicAdvisorProfile = Profile(
        role: 'Assistant Professor at Taibah Univeraity',
@@ -293,13 +301,12 @@ class Services extends StatelessWidget {
 
  @override
   Widget build(BuildContext context) {
-   AcademicAdvisor user = dataFill();
     return Scaffold(
       extendBodyBehindAppBar: true,
       drawer: SizedBox(
         width: 513.w,
         child: Drawer(
-          child: Menu(),
+          child: Menu(user: Advisor,),
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
@@ -318,7 +325,7 @@ class Services extends StatelessWidget {
               size: 45.sp,
             ),
             Text(
-              user.firstName,
+              Advisor.firstName,
               textAlign: TextAlign.left,
               style: TextStyle(
                   fontSize: 21.sp,
@@ -372,7 +379,7 @@ class Services extends StatelessWidget {
                     children: [
                       ServicesCard(
                         label: 'Profile',
-                        Route: ProfilePage(user: user,),
+                        Route: ProfilePage(user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'profile',
@@ -387,7 +394,7 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Dashboard',
-                        Route: DashboardWidget(student: user.student[0],),
+                        Route: DashboardWidget(student: Advisor.student[0],user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'summary for all activities, charts,  and  statistics in a single '
@@ -402,7 +409,7 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Chating',
-                        Route: ProfilePage(user: user,),
+                        Route: ProfilePage(user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'live '
@@ -420,7 +427,7 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Students\' List',
-                        Route: StudentsList(studentList: user.student,),
+                        Route: StudentsList(studentList: Advisor.student,user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'list',
@@ -440,7 +447,7 @@ class Services extends StatelessWidget {
                     children: [
                       ServicesCard(
                         label: 'Add/Delete',
-                        Route: ProfilePage(user: user,),
+                        Route: ProfilePage(user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'adding/deleting',
@@ -455,7 +462,7 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Scores',
-                        Route: ScoresWidget(user: user,),
+                        Route: ScoresWidget(user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'Evaluate   and   customize  your student\'s '
@@ -473,7 +480,7 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Notes',
-                        Route: Notes(user: user,),
+                        Route: Notes(user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'write   '
@@ -491,7 +498,7 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Report',
-                        Route: Report(user: user,),
+                        Route: Report(user: Advisor,),
                         children:  [
                           TextSpan(
                               text: 'generate    '

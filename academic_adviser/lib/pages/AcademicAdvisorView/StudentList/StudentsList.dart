@@ -1,3 +1,4 @@
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Student.dart';
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:flutter/material.dart';
@@ -5,19 +6,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'StudentsListWidget/StudentsListView.dart';
 
 class StudentsList extends StatefulWidget {
-  const StudentsList({Key? key, required this.studentList}) : super(key: key);
+   StudentsList({Key? key, required this.studentList ,required this.user}) : super(key: key);
   final List<Student> studentList;
-
+  AcademicAdvisor user;
   @override
-  State<StudentsList> createState() => _StudentsListState(studentList: studentList);
+  State<StudentsList> createState() => _StudentsListState(studentList: studentList, user: user);
 }
 
 class _StudentsListState extends State<StudentsList> {
-  _StudentsListState({Key? key, required this.studentList}) ;
+  _StudentsListState({Key? key, required this.studentList ,required this.user}) ;
   final List<Student> studentList;
+  AcademicAdvisor user;
+
   @override
   Widget build(BuildContext context) {
-    return ScaffoldPlus([
+    return ScaffoldPlus(
+        [
       Container(
         width: 1920.w,
         height: 925.h,
@@ -114,7 +118,8 @@ class _StudentsListState extends State<StudentsList> {
                   ]
               )
       ),
-    ]
+    ],
+      user: user,
     );
   }
 }

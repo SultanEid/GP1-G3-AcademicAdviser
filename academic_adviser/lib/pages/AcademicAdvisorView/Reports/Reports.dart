@@ -1,14 +1,12 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Reports/ReportWidget/AlertsWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Reports/ReportWidget/NotesWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Reports/ReportWidget/ProfileWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Reports/ReportWidget/ScoresWidget.dart';
+
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:convert';
 import 'dart:html';
+import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
@@ -16,9 +14,14 @@ import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/rendering.dart';
 import 'package:image/image.dart' as IMG;
+
 import 'ReportWidget/AbsentsWidget.dart';
+import 'ReportWidget/AlertsWidget.dart';
 import 'ReportWidget/CoursesProgressWidget.dart';
 import 'ReportWidget/LevelTimeLineWidget.dart';
+import 'ReportWidget/NotesWidget.dart';
+import 'ReportWidget/ProfileWidget.dart';
+import 'ReportWidget/ScoresWidget.dart';
 
 class Report extends StatefulWidget {
    Report({Key? key ,required this.user}) : super(key: key);
@@ -31,12 +34,10 @@ class _ReportState extends State<Report> {
   _ReportState({required this.user});
 AcademicAdvisor user;
   Future<void> _convertImageToPDF() async {
-
     print('sd');
-
     //Create the PDF document
     PdfDocument document = PdfDocument();
-    document.pageSettings.size = Size(710 * 3.1, 710 * 6.4);
+    document.pageSettings.size = Size(710 * 3.3, 710 * 6.4);
 
     //Add the page
     PdfPage page = document.pages.add();
@@ -495,6 +496,7 @@ AcademicAdvisor user;
             )),
 
       ],
+      user: user,
     );
   }
 }

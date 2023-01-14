@@ -1,7 +1,9 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+import 'CertificateCardWidget.dart';
 
 class CertificatesWidget extends StatelessWidget {
   CertificatesWidget({Key? key ,required this.user}) : super(key: key);
