@@ -53,6 +53,9 @@ class DefaultFirebaseOptions {
     projectId: 'academic-advisor-assistant-db',
     authDomain: 'academic-advisor-assistant-db.firebaseapp.com',
     storageBucket: 'academic-advisor-assistant-db.appspot.com',
+    databaseURL: "https://academic-advisor-assistant-db-default-rtdb.firebaseio.com",
+
+
   );
 
   static const FirebaseOptions android = FirebaseOptions(
