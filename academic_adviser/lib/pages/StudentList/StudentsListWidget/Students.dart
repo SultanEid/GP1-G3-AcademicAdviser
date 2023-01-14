@@ -20,32 +20,6 @@ class _StudentsState extends State<Students> {
   var StudentsListData = [];
   bool time = false;
 
-  void getStudents() async {
-
-   await FirebaseFirestore.instance.collection("Profile").doc(FirebaseAuth.instance.currentUser!.uid).collection("StudentList").doc("StudentData").get().then((Snapshot) {
-      for (String Student in Snapshot.data()?["students"]) {
-        setState(() {
-          if (!StudentsUID.contains(Student)) {
-            StudentsUID.add(Student);
-
-            print(StudentsUID);
-            FirebaseFirestore.instance
-                .collection("StudentList")
-                .doc(Student)
-                .get()
-                .then((StudentSnapshot) {
-              StudentsListData.add(StudentData(
-                name: StudentSnapshot["Name"],
-                studentId: StudentSnapshot["studentId"],
-                GPA: StudentSnapshot["GPA"],
-                CH: StudentSnapshot["CH"],
-                RH: StudentSnapshot["RH"],
-              ));
-              print(StudentData().name.toString());
-            }); }  });
-      }
-    });
-  }
   @override
   void setState(VoidCallback fn) {
     // TODO: implement setState
@@ -54,7 +28,6 @@ class _StudentsState extends State<Students> {
 
   @override
   Widget build(BuildContext context) {
-    getStudents();
     print(StudentsListData);
     return ListView.builder(
         itemCount: StudentsUID.length,
