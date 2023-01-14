@@ -1,4 +1,4 @@
-import 'package:academic_adviser/Models/User.dart';
+import 'package:academic_adviser/Models/AAAUser.dart';
 import 'package:academic_adviser/pages/Services/Authentication.dart';
 import 'package:academic_adviser/pages/SignIn/SignInWidgets/SignInTextField.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +80,7 @@ class SignInInputSection extends StatelessWidget {
               height: 42.h,
               child: TextButton(
                   onPressed: () async {
-                    TheUser signInResult = await AuthService().SignInWithEmailPassword(EmailTextField.textInput!,PasswordTextField.textInput!);
+                    AAAUser signInResult = await AuthService().SignInWithEmailPassword(EmailTextField.textInput!,PasswordTextField.textInput!);
                     print(signInResult.uid);
                   },
                   style: ElevatedButton.styleFrom(

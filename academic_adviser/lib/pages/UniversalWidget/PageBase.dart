@@ -1,4 +1,3 @@
-import 'package:academic_adviser/pages/Profile/Profile.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -59,7 +58,7 @@ class ScaffoldPlus extends StatelessWidget {
                 },
                 onSelected: (value) async {
                   if (value == 0) {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Profile(uid: FirebaseAuth.instance.currentUser?.uid)));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Profile(uid: FirebaseAuth.instance.currentUser?.uid)));
                   } else if (value == 1) {
                     await AuthService().SignOut();
                   }

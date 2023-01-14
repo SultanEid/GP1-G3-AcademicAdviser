@@ -1,7 +1,3 @@
-import 'package:academic_adviser/pages/Profile/Profile.dart';
-import 'package:academic_adviser/pages/Scores/Scores.dart';
-import 'package:academic_adviser/pages/ServicesPage/Services.dart';
-import 'package:academic_adviser/pages/StudentList/StudentsList.dart';
 import 'package:academic_adviser/pages/UniversalWidget/MenuButton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -52,25 +48,25 @@ class Menu extends StatelessWidget {
               indent: 56.5.w,
               endIndent: 56.5.w,
             ),
-            SizedBox(height: 23.5.h,),
-            MenuButton(buttonLabel:"Services",icon: Icons.view_list_rounded, route: null),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Profile",icon: Icons.person,route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Dashboard",icon: Icons.dashboard, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Chat",icon: Icons.chat, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Students' List",icon: Icons.list, route: StudentsList()),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Recommend Courses",icon: Icons.collections_bookmark, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Scores",icon: Icons.stacked_line_chart, route: Scores()),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Notes",icon: Icons.edit_note_outlined, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
-            SizedBox(height: 21.h,),
-            MenuButton(buttonLabel:"Report",icon: Icons.library_books_outlined, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
-            SizedBox(height: 21.h,),
+            // SizedBox(height: 23.5.h,),
+            // MenuButton(buttonLabel:"Services",icon: Icons.view_list_rounded, route: null),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Profile",icon: Icons.person,route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Dashboard",icon: Icons.dashboard, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Chat",icon: Icons.chat, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Students' List",icon: Icons.list, route: StudentsList()),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Recommend Courses",icon: Icons.collections_bookmark, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Scores",icon: Icons.stacked_line_chart, route: Scores()),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Notes",icon: Icons.edit_note_outlined, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
+            // SizedBox(height: 21.h,),
+            // MenuButton(buttonLabel:"Report",icon: Icons.library_books_outlined, route: Profile(uid: FirebaseAuth.instance.currentUser?.uid)),
+            // SizedBox(height: 21.h,),
 
           ],
         ),

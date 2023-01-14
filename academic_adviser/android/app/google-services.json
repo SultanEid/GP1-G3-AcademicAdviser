@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "759792061333",
+    "project_id": "academic-advisor-assistant-db",
+    "storage_bucket": "academic-advisor-assistant-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759792061333:android:8c0fc0c3ca6a2cd5a9049c",
+        "android_client_info": {
+          "package_name": "GP1G3.AcademicAdviser.academic_adviser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "759792061333-mkhguidm4gejakg37pm7sfgorud95t84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6FvWojg_NjeYXJGX1xT6uvDrr-lgQmxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "759792061333-mkhguidm4gejakg37pm7sfgorud95t84.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "759792061333-c9jgtkv7g31bj8hnua7j5sp701i64iat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "GP1G3.AcademicAdviser.academicAdviser"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

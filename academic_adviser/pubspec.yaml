@@ -22,6 +22,10 @@ dependencies:
   simple_gradient_text: ^1.2.4
   duration_button: ^1.0.0
   carousel_slider: ^4.2.1
+  intl: ^0.17.0
+  timelines: ^0.1.0
+  syncfusion_flutter_pdf: ^20.4.42
+  image: ^3.2.2
 
 dev_dependencies:
   flutter_test:
