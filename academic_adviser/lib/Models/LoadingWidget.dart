@@ -12,7 +12,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../pages/ServicesPage/Services.dart';
+import '../pages/AcademicAdvisorView/ServicesPage/Services.dart';
 import 'AcademicAdvisor.dart';
 import 'Note.dart';
 import 'Score.dart';
@@ -366,6 +366,8 @@ class LoadingWidget extends StatelessWidget{
 
     return getCoursesData;
   }
+
+
 
   @override
   Widget build(BuildContext context) {

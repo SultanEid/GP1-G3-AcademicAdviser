@@ -7,7 +7,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 class ProgressWidgetDB extends StatelessWidget {
   ProgressWidgetDB({required this.student});
   Student student;

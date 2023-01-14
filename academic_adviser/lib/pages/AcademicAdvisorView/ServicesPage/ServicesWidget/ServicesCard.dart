@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
 
 import 'package:academic_adviser/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart';
+=======
+import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+>>>>>>> Stashed changes
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
+<<<<<<< Updated upstream
+=======
+import 'CardButton.dart';
+
+>>>>>>> Stashed changes
 class ServicesCard extends StatelessWidget {
   const ServicesCard({Key? key, required this.label, required this.icon, required this.children, required this.Route}) : super(key: key);
   final String label;

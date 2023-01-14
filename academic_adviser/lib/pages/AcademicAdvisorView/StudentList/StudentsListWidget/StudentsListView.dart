@@ -1,7 +1,13 @@
 import 'package:academic_adviser/Models/Student.dart';
+<<<<<<< Updated upstream
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../UniversalWidget/AAA_Icons_Pack.dart';
+>>>>>>> Stashed changes
 
 class StudentsListView extends StatefulWidget {
   const StudentsListView({Key? key, required this.studentList}) : super(key: key);

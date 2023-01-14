@@ -1,9 +1,18 @@
+<<<<<<< Updated upstream
 import 'package:academic_adviser/Models/Appointment.dart';
 import 'package:academic_adviser/Models/Course.dart';
+=======
+>>>>>>> Stashed changes
 import 'package:academic_adviser/Models/Student.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+<<<<<<< Updated upstream
+=======
+import '../../../../Models/Appointment.dart';
+import '../../../../Models/Course.dart';
+
+>>>>>>> Stashed changes
 
 class ScheduleWidgetDB extends StatelessWidget {
   ScheduleWidgetDB({Key? key , required this.student}) : super(key: key);

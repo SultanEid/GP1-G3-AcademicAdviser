@@ -1,6 +1,6 @@
-import 'package:academic_adviser/pages/Profile/Profile.dart';
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
-import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
+import 'package:academic_adviser/pages/AcademicAdvisorView/Menu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +10,9 @@ import '../Services/Authentication.dart';
 import 'AAA_Icons_Pack.dart';
 
 class ScaffoldPlus extends StatelessWidget {
-  const ScaffoldPlus(this.children, {Key? key}) : super(key: key);
+   ScaffoldPlus(this.children, {Key? key ,required this.user}) : super(key: key);
   final List<Widget> children;
+  AcademicAdvisor user;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class ScaffoldPlus extends StatelessWidget {
         drawer: SizedBox(
           width: 513.w,
           child: Drawer(
-            child: Menu(),
+            child: Menu(user: user,),
             backgroundColor: Colors.transparent,
             elevation: 0,
           ),

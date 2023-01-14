@@ -1,9 +1,21 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Note.dart';
+<<<<<<< Updated upstream
 import 'package:academic_adviser/pages/AcademicAdvisorView/Notes/Note/NoteCard.dart';
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+=======
+import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'Note/NoteCard.dart';
+
+
+
+>>>>>>> Stashed changes
 class Notes extends StatefulWidget {
   const Notes({Key? key, required this.user}) : super(key: key);
   final AcademicAdvisor user;
@@ -15,6 +27,7 @@ class _NotesState extends State<Notes> {
   _NotesState({Key? key, required this.user});
   final AcademicAdvisor user;
 
+<<<<<<< Updated upstream
   /*
   List<Student> stdList = [
     Student(
@@ -50,6 +63,12 @@ class _NotesState extends State<Notes> {
 
   @override
   Widget build(BuildContext context) {
+=======
+  int _selectedName = 0;
+  @override
+  Widget build(BuildContext context) {
+
+>>>>>>> Stashed changes
     return ScaffoldPlus(
       [
         Container(
@@ -94,11 +113,28 @@ class _NotesState extends State<Notes> {
                               ),
                               itemCount: user.student[_selectedName].notes?.length,
                               itemBuilder: (context, index) {
+<<<<<<< Updated upstream
                                 return NoteCard(
                                   color: user.student[_selectedName].notes?[index].receiver == 'Myself'? Color.fromARGB(255, 180, 145, 250):Color.fromARGB(255, 254, 200, 113),
                                   reciver: user.student[_selectedName].notes?[index].receiver,
                                   noteContent: user.student[_selectedName].notes?[index].noteContent,
                                 );
+=======
+                                int IndexA=index;
+                                return NoteCard(
+                                    index : IndexA,
+                                    selectedName: _selectedName,
+                                    user: user,
+                                  color: user.student[_selectedName].notes?[index].receiver == 'Myself'? Color.fromARGB(255, 180, 145, 250):Color.fromARGB(255, 254, 200, 113),
+                                  noteContent: user.student[_selectedName].notes![index].noteContent,
+                                  reciver: user.student[_selectedName].notes![index].receiver,
+                                    onPress: (){
+                                      setState(() {
+                                      });
+                                    },
+                                );
+
+>>>>>>> Stashed changes
                               }),
                         ),
                       ],
@@ -167,6 +203,10 @@ class _NotesState extends State<Notes> {
               ),
             )),
       ],
+<<<<<<< Updated upstream
+=======
+      user: user,
+>>>>>>> Stashed changes
     );
   }
 }

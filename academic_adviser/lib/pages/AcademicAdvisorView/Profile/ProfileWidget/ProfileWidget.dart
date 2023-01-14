@@ -1,8 +1,16 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+<<<<<<< Updated upstream
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+>>>>>>> Stashed changes
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({Key? key, required this.user}) : super(key: key);
   final AcademicAdvisor user;

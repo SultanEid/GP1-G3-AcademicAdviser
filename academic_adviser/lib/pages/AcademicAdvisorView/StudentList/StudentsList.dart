@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+<<<<<<<< Updated upstream:academic_adviser/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
+>>>>>>> Stashed changes
 import 'package:academic_adviser/Models/Student.dart';
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'StudentsListWidget/StudentsListView.dart';
 
 class StudentsList extends StatefulWidget {
+<<<<<<< Updated upstream
   const StudentsList({Key? key, required this.studentList}) : super(key: key);
   final List<Student> studentList;
 
@@ -18,6 +24,24 @@ class _StudentsListState extends State<StudentsList> {
   @override
   Widget build(BuildContext context) {
     return ScaffoldPlus([
+=======
+   StudentsList({Key? key, required this.studentList ,required this.user}) : super(key: key);
+  final List<Student> studentList;
+  AcademicAdvisor user;
+  @override
+  State<StudentsList> createState() => _StudentsListState(studentList: studentList, user: user);
+}
+
+class _StudentsListState extends State<StudentsList> {
+  _StudentsListState({Key? key, required this.studentList ,required this.user}) ;
+  final List<Student> studentList;
+  AcademicAdvisor user;
+
+  @override
+  Widget build(BuildContext context) {
+    return ScaffoldPlus(
+        [
+>>>>>>> Stashed changes
       Container(
         width: 1920.w,
         height: 925.h,
@@ -114,7 +138,18 @@ class _StudentsListState extends State<StudentsList> {
                   ]
               )
       ),
+<<<<<<< Updated upstream
     ]
     );
   }
 }
+=======
+    ],
+      user: user,
+    );
+  }
+}
+========
+
+>>>>>>>> Stashed changes:academic_adviser/lib/pages/StudentList/StudentsList.dart
+>>>>>>> Stashed changes

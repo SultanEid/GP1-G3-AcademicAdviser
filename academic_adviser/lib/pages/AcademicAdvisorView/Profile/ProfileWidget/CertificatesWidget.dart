@@ -1,7 +1,15 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
+<<<<<<< Updated upstream
 import 'package:academic_adviser/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+import 'CertificateCardWidget.dart';
+>>>>>>> Stashed changes
 
 class CertificatesWidget extends StatelessWidget {
   CertificatesWidget({Key? key ,required this.user}) : super(key: key);
@@ -46,4 +54,8 @@ class CertificatesWidget extends StatelessWidget {
           )
         ]));
   }
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

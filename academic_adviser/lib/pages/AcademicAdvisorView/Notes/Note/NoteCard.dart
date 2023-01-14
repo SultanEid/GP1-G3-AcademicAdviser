@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,6 +16,91 @@ class NoteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+=======
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
+import 'package:academic_adviser/Models/LoadingWidget.dart';
+import 'package:academic_adviser/Models/Note.dart';
+import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+class NoteCard extends StatefulWidget {
+   NoteCard(
+      {Key? key,
+        required this.color,
+        required this.user,
+        required this.selectedName,
+        required this.index,
+        required this.onPress,
+         this.note,
+        required this.noteContent,
+        required this.reciver,
+      })
+      : super(key: UniqueKey());
+   Color? color;
+  Note? note;
+  AcademicAdvisor user;
+  int selectedName;
+   int index;
+  VoidCallback onPress;
+  String reciver;
+  String noteContent;
+
+
+  @override
+  State<NoteCard> createState() => _NotesState(color: color , user: user , selectedName: selectedName , index: index,onPress: onPress,reciver: reciver,noteContent: noteContent,);
+}
+
+class _NotesState extends State<NoteCard> {
+  _NotesState(
+      {Key? key,
+        required this.color,
+        required this.user,
+        required this.selectedName,
+        required this.index,
+        required this.onPress,
+         this.note,
+        required this.noteContent,
+        required this.reciver,
+      });
+   Color? color;
+  Note? note;
+  AcademicAdvisor user;
+  int selectedName;
+  int index;
+  VoidCallback onPress;
+  String noteContent;
+  String? text;
+  String reciver;
+  bool? NoteState=false;
+  String? NoteID;
+  Key key= UniqueKey();
+
+
+    DatabaseReference DBR =  FirebaseDatabase.instance.ref("Student");
+
+  //  void AddNote(String uid){
+  //
+  //  DBR.child(uid).child("UserNotes").once().then((DataSnapshot) {
+  //     Map<String,dynamic>? data = DataSnapshot.snapshot.value as Map<String, dynamic>?;
+  //     List<dynamic>? keyList = List.from(data!.keys);
+  //     print(keyList);
+  //   });
+  // }
+
+  //  void AddNote(String uid){
+  //
+  //    Query query = FirebaseDatabase.instance.ref("Student").child(uid).child("UserNotes").orderByKey();
+  //    query.once().then((DataSnapshot snapshot) {
+  //    });
+  // }
+
+
+  @override
+  Widget build(BuildContext context) {
+    print("A");
+    print(index);
+>>>>>>> Stashed changes
     return Container(
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
@@ -30,7 +116,11 @@ class NoteCard extends StatelessWidget {
           highlightColor: Colors.transparent,
           hoverElevation:0,
           highlightElevation: 0,
+<<<<<<< Updated upstream
             elevation: 0,
+=======
+          elevation: 0,
+>>>>>>> Stashed changes
           onPressed: () {
             openDialog(context);
           },
@@ -44,7 +134,11 @@ class NoteCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
+<<<<<<< Updated upstream
                         reciver!,
+=======
+                        reciver,
+>>>>>>> Stashed changes
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 15.sp,
@@ -66,7 +160,35 @@ class NoteCard extends StatelessWidget {
                         highlightColor: Colors.transparent,
                         splashColor: Colors.transparent,
                         padding: EdgeInsets.zero,
+<<<<<<< Updated upstream
                         onPressed: () {},
+=======
+                        onPressed: () {
+                          setState(() {
+                            // user.student[selectedName].notes?.removeAt(index);
+                            // AddNote(user.student[selectedName].uid);
+                            // String indexPath = index.toString();
+                            // FirebaseDatabase.instance.ref("Student").child(user.student[selectedName].uid).child("UserNotes").child(indexPath).remove();
+                            // Map<dynamic ,dynamic> studentNote = {
+                            //   'NoteID': "S1",
+                            //   'NoteState' :true,
+                            //   'Reciver':"Student",
+                            //   'Text': "Hi adding from code",
+                            // };
+                            // DatabaseReference DBR =  FirebaseDatabase.instance.ref("Student").child(user.student[selectedName].uid).child("UserNotes").child("1").push();
+                            //
+                            // // DatabaseReference DBR =  FirebaseDatabase.instance.ref("Student").child(user.student[selectedName].uid).child("UserNotes").push();
+                            // DBR.set({
+                            //   'NoteID': "S1",
+                            //   'NoteState' :true,
+                            //   'Reciver':"Student",
+                            //   'Text': "Hi adding from code",
+                            // });
+                            print(DBR.key);
+                            onPress();
+                          });
+                        },
+>>>>>>> Stashed changes
                         icon: Icon(
                           AAA_Icons_Pack.delete,
                           color: Colors.white,
@@ -88,12 +210,20 @@ class NoteCard extends StatelessWidget {
               ),
               Padding(
                   padding:
+<<<<<<< Updated upstream
                       EdgeInsets.symmetric(vertical: 7.h, horizontal: 10.w),
+=======
+                  EdgeInsets.symmetric(vertical: 7.h, horizontal: 10.w),
+>>>>>>> Stashed changes
                   child: Container(
                     width: 459.w,
                     height: 90.h,
                     child: Text(
+<<<<<<< Updated upstream
                       noteContent!,
+=======
+                      noteContent,
+>>>>>>> Stashed changes
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 15.sp,
@@ -106,7 +236,10 @@ class NoteCard extends StatelessWidget {
           ),
         ));
   }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
   Future openDialog(BuildContext context) {
     return showDialog(
         context: context,
@@ -119,7 +252,11 @@ class NoteCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
+<<<<<<< Updated upstream
                     reciver!,
+=======
+                    reciver,
+>>>>>>> Stashed changes
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 25.sp,
@@ -166,7 +303,11 @@ class NoteCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
+<<<<<<< Updated upstream
                         noteContent!,
+=======
+                        noteContent,
+>>>>>>> Stashed changes
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 16.sp,

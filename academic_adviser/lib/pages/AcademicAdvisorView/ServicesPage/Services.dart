@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Alert.dart';
@@ -19,12 +20,64 @@ import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+=======
+import 'dart:js_util';
+
+import 'package:academic_adviser/Models/DatabaseVariable.dart' as GlobalVaribales;
+import 'package:academic_adviser/Models/AAAUser.dart';
+import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
+import 'package:academic_adviser/pages/AcademicAdvisorView/Menu.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+
+<<<<<<<< Updated upstream:academic_adviser/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart
+import '../../../Models/AcademicAdvisor.dart';
+import '../../../Models/Alert.dart';
+import '../../../Models/Appointment.dart';
+import '../../../Models/Attendance.dart';
+import '../../../Models/Certificate.dart';
+import '../../../Models/Course.dart';
+import '../../../Models/Note.dart';
+import '../../../Models/Office.dart';
+import '../../../Models/OfficeHours.dart';
+import '../../../Models/Profile.dart';
+import '../../../Models/Score.dart';
+import '../../../Models/Student.dart';
+========
+import '../../Models/AcademicAdvisor.dart';
+import '../../Models/Alert.dart';
+import '../../Models/Appointment.dart';
+import '../../Models/Attendance.dart';
+import '../../Models/Certificate.dart';
+import '../../Models/Course.dart';
+import '../../Models/Note.dart';
+import '../../Models/Office.dart';
+import '../../Models/OfficeHours.dart';
+import '../../Models/Profile.dart';
+import '../../Models/Score.dart';
+import '../../Models/Student.dart';
+import '../AcademicAdvisorView/StudentList/StudentsList.dart';
+>>>>>>>> Stashed changes:academic_adviser/lib/pages/ServicesPage/Services.dart
+>>>>>>> Stashed changes
 import '../Dashboard/Dashboard.dart';
 import '../Notes/Note.dart';
 import '../Profile/Profile.dart';
 import '../Reports/Reports.dart';
+<<<<<<< Updated upstream
 
 class Services extends StatelessWidget {
+=======
+import '../Scores/Scores.dart';
+import '../StudentList/StudentsList.dart';
+import 'ServicesWidget/ServicesCard.dart';
+
+class Services extends StatelessWidget {
+  Services({ required this.Advisor});
+    AcademicAdvisor Advisor;
+>>>>>>> Stashed changes
  AcademicAdvisor dataFill() {
    Profile AcadimicAdvisorProfile = Profile(
        role: 'Assistant Professor at Taibah Univeraity',
@@ -293,13 +346,20 @@ class Services extends StatelessWidget {
 
  @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
    AcademicAdvisor user = dataFill();
+=======
+>>>>>>> Stashed changes
     return Scaffold(
       extendBodyBehindAppBar: true,
       drawer: SizedBox(
         width: 513.w,
         child: Drawer(
+<<<<<<< Updated upstream
           child: Menu(),
+=======
+          child: Menu(user: Advisor,),
+>>>>>>> Stashed changes
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
@@ -318,7 +378,11 @@ class Services extends StatelessWidget {
               size: 45.sp,
             ),
             Text(
+<<<<<<< Updated upstream
               user.firstName,
+=======
+              Advisor.firstName,
+>>>>>>> Stashed changes
               textAlign: TextAlign.left,
               style: TextStyle(
                   fontSize: 21.sp,
@@ -372,7 +436,11 @@ class Services extends StatelessWidget {
                     children: [
                       ServicesCard(
                         label: 'Profile',
+<<<<<<< Updated upstream
                         Route: ProfilePage(user: user,),
+=======
+                        Route: ProfilePage(user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'profile',
@@ -387,7 +455,11 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Dashboard',
+<<<<<<< Updated upstream
                         Route: DashboardWidget(student: user.student[0],),
+=======
+                        Route: DashboardWidget(student: Advisor.student[0],user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'summary for all activities, charts,  and  statistics in a single '
@@ -402,7 +474,11 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Chating',
+<<<<<<< Updated upstream
                         Route: ProfilePage(user: user,),
+=======
+                        Route: ProfilePage(user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'live '
@@ -420,7 +496,11 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Students\' List',
+<<<<<<< Updated upstream
                         Route: StudentsList(studentList: user.student,),
+=======
+                        Route: StudentsList(studentList: Advisor.student,user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'list',
@@ -440,7 +520,11 @@ class Services extends StatelessWidget {
                     children: [
                       ServicesCard(
                         label: 'Add/Delete',
+<<<<<<< Updated upstream
                         Route: ProfilePage(user: user,),
+=======
+                        Route: ProfilePage(user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'adding/deleting',
@@ -455,7 +539,11 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Scores',
+<<<<<<< Updated upstream
                         Route: ScoresWidget(user: user,),
+=======
+                        Route: ScoresWidget(user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'Evaluate   and   customize  your student\'s '
@@ -473,7 +561,11 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Notes',
+<<<<<<< Updated upstream
                         Route: Notes(user: user,),
+=======
+                        Route: Notes(user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'write   '
@@ -491,7 +583,11 @@ class Services extends StatelessWidget {
                       SizedBox(width: 29.w,),
                       ServicesCard(
                         label: 'Report',
+<<<<<<< Updated upstream
                         Route: Report(user: user,),
+=======
+                        Route: Report(user: Advisor,),
+>>>>>>> Stashed changes
                         children:  [
                           TextSpan(
                               text: 'generate    '
