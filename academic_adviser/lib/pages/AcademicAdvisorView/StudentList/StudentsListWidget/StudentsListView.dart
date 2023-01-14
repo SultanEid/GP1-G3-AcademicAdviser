@@ -1,7 +1,7 @@
 import 'package:academic_adviser/Models/Student.dart';
-import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../UniversalWidget/AAA_Icons_Pack.dart';
 
 class StudentsListView extends StatefulWidget {
   const StudentsListView({Key? key, required this.studentList}) : super(key: key);

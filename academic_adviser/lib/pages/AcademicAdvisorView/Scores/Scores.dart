@@ -1,11 +1,15 @@
+import 'package:academic_adviser/Models/Score.dart';
 
-import 'package:academic_adviser/Models/AcademicAdvisor.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoresSummaryTopCard.dart';
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../Models/AcademicAdvisor.dart';
+import 'ScoresWidget/ScoreDescription.dart';
+import 'ScoresWidget/ScoresSummaryTopCard.dart';
+
+
 class ScoresWidget extends StatefulWidget {
   const ScoresWidget({Key? key, required this.user}) : super(key: key);
   final AcademicAdvisor user;
@@ -161,6 +165,8 @@ class _ScoresState extends State<ScoresWidget> {
               ],
             )),
       ],
+      user: user,
+
     );
   }
 }

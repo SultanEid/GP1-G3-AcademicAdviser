@@ -3,6 +3,8 @@ import 'package:academic_adviser/Models/Student.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
 class AbsentsChartR extends StatelessWidget {
   AbsentsChartR({Key? key,required this.students}) : super(key: key);
   Student students;

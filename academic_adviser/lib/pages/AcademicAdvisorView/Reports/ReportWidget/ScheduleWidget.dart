@@ -1,8 +1,10 @@
-import 'package:academic_adviser/Models/Appointment.dart';
-import 'package:academic_adviser/Models/Course.dart';
-import 'package:academic_adviser/Models/Student.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../Models/Appointment.dart';
+import '../../../../Models/Course.dart';
+import '../../../../Models/Student.dart';
+
 
 class ScheduleWidgetDB extends StatelessWidget {
   ScheduleWidgetDB({Key? key , required this.student}) : super(key: key);

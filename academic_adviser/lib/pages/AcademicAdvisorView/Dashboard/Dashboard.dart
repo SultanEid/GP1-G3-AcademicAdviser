@@ -1,24 +1,24 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Student.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart';
-import 'package:academic_adviser/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ProfileWidget.dart';
+
 import 'package:academic_adviser/pages/UniversalWidget/PageBase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'DashboardWidget/AlertsWidget.dart';
 import 'DashboardWidget/CoursesProgressWidget.dart';
-import 'DashboardWidget/ScheduleWidget.dart';
+import 'DashboardWidget/LevelTimeLineWidget.dart';
+import 'DashboardWidget/NotesWidget.dart';
 import 'DashboardWidget/ScoresWidget.dart';
 
 class DashboardWidget extends StatelessWidget {
-  DashboardWidget({Key? key , required this.student}) : super(key: key);
+  DashboardWidget({Key? key , required this.student ,required this.user}) : super(key: key);
   Student student;
+  AcademicAdvisor user;
   @override
   Widget build(BuildContext context) {
-    return ScaffoldPlus([
+    return ScaffoldPlus(
+        [
       Container(
         alignment: Alignment.topCenter,
         width: 1920.w,
@@ -29,7 +29,7 @@ class DashboardWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    ProfileWidgetDB(student: student,),
+                    // ProfileWidgetDB(student: student,),
                     Column(
                       children: [
                         ScoresDB(student: student,),
@@ -38,8 +38,8 @@ class DashboardWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                AbsentsChartDB(students: student,),
-                ProgressWidgetDB(student: student,),
+                // AbsentsChartDB(students: student,),
+                // ProgressWidgetDB(student: student,),
               ],
             ),
             Column(
@@ -50,12 +50,14 @@ class DashboardWidget extends StatelessWidget {
                     AlertsWidgetDB(students: student,),
                   ],
                 ),
-                ScheduleWidgetDB(student: student,),
+                // ScheduleWidgetDB(student: student,),
               ],
             )
           ],
         ),
       )
-    ]);
+    ],
+      user: user,
+    );
   }
 }
