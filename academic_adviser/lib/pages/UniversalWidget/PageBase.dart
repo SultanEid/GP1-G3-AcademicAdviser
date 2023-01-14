@@ -1,3 +1,4 @@
+import 'package:academic_adviser/pages/Profile/Profile.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Backgraound.dart';
 import 'package:academic_adviser/pages/UniversalWidget/Menu.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

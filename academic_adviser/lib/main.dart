@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 print('You have an error! ${snapshot.error.toString()}');
                 return Text('S Worng!');
               } else {
-                return const Wrapper();
+                return  Wrapper();
               }
             },
           )

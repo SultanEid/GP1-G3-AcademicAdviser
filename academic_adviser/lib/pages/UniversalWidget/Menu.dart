@@ -1,3 +1,7 @@
+import 'package:academic_adviser/pages/Profile/Profile.dart';
+import 'package:academic_adviser/pages/Scores/Scores.dart';
+import 'package:academic_adviser/pages/ServicesPage/Services.dart';
+import 'package:academic_adviser/pages/StudentList/StudentsList.dart';
 import 'package:academic_adviser/pages/UniversalWidget/MenuButton.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

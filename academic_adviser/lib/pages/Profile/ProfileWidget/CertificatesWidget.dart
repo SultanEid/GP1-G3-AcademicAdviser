@@ -1,15 +1,18 @@
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/pages/Profile/ProfileWidget/CertificateCardWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../../../Models/Certificate.dart';
+import '../../../Models/Student.dart';
 
 class CertificatesWidget extends StatelessWidget {
-  const CertificatesWidget({Key? key}) : super(key: key);
+  CertificatesWidget({Key? key ,required this.user}) : super(key: key);
+  AcademicAdvisor user;
   @override
   Widget build(BuildContext context) {
-    final CertificatesInfo = Provider.of<List<Certificate>?>(context);
+
     return Container(
         width: 406.w,
         height: 438.h,
@@ -38,10 +41,10 @@ class CertificatesWidget extends StatelessWidget {
             width: 350.w,
             height: 347.h,
             child: ListView.builder(
-                itemCount: CertificatesInfo?.length,
+                itemCount: user.profile.additionalCertificates!.length,
                 itemBuilder: (BuildContext context, index) {
                   return ListTile(
-                    title: CertificateCardWidget(CertificatesInfoIndex : CertificatesInfo![index]),
+                    title: CertificateCardWidget(CertificatesInfoIndex : user.profile.additionalCertificates![index]),
                   );
                 }),
           )
