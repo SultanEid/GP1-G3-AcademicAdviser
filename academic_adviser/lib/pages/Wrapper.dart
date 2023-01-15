@@ -101,77 +101,65 @@ class LoadingData {
 
     for (int i = 0; i < 1; i++) {
       Sultan = AcademicAdvisor(
-        firstName: getAcademicAdvisorData[0]
-        [FirebaseAuth.instance.currentUser!.uid]["firstName"],
-        lastName: getAcademicAdvisorData[0]
-        [FirebaseAuth.instance.currentUser!.uid]["lastName"],
-        academicID: getAcademicAdvisorData[0]
-        [FirebaseAuth.instance.currentUser!.uid]["advisorID"],
-        academicEmail: getAcademicAdvisorData[0]
-        [FirebaseAuth.instance.currentUser!.uid]["advisorEmail"],
-        uid: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]
-        ["uid"],
-        phone: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]
-        ["phone"],
+        firstName: getAcademicAdvisorData[0]["firstName"],
+        lastName: getAcademicAdvisorData[0]["lastName"],
+        academicID: getAcademicAdvisorData[0]["advisorID"],
+        academicEmail: getAcademicAdvisorData[0]["advisorEmail"],
+        uid: getAcademicAdvisorData[0]["uid"],
+        phone: getAcademicAdvisorData[0]["phone"],
         student: [],
         office: Office(
           officeNumber: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["Office"]
+          ["Profile"]["Office"]
           ["officeNumber"],
           building: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["Office"]
+          ["Profile"]["Office"]
           ["bulding"],
           floor: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["Office"]
+          ["Profile"]["Office"]
           ["floor"],
         ),
         officeHoures: [
           OfficeHours(
             officeHoursFrom: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day1"]["officeHoursfrom"],
             officeHoursTo: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day1"]["officeHoursto"],
             day: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day1"]["avalibaleDay"],
           ),
           OfficeHours(
             officeHoursFrom: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day2"]["officeHoursfrom"],
             officeHoursTo: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day2"]["officeHoursto"],
-            day: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            day: getAcademicAdvisorData[0]["Profile"]
             ["Office"]["OfficeHours"]["Day2"]["avalibaleDay"],
           ),
           OfficeHours(
             officeHoursFrom: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day3"]["officeHoursfrom"],
-            officeHoursTo: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            officeHoursTo: getAcademicAdvisorData[0]["Profile"]
             ["Office"]["OfficeHours"]["Day3"]["officeHoursto"],
             day: getAcademicAdvisorData[0]
-            [FirebaseAuth.instance.currentUser!.uid]["Profile"]
+            ["Profile"]
             ["Office"]["OfficeHours"]["Day3"]["avalibaleDay"],
           )
         ],
         //AdvisorProfile: Profile(brief: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["brief"], profileAvatar: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["URLAvatar"], additionalCirtificates: [Certificate(certificateTitle: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["additionalCirtificates"][0]["certificateName"], certificaIssuer: getStudentData[i]["Profile"]["additionalCirtificates"][0]["providerName"], grade: getStudentData[i]["Profile"]["additionalCirtificates"][0]["grade"], date: getStudentData[i]["Profile"]["additionalCirtificates"][0]["date"]),Certificate(certificateTitle: getStudentData[i]["Profile"]["additionalCirtificates"][1]["certificateName"], certificaIssuer: getStudentData[i]["Profile"]["additionalCirtificates"][1]["providerName"], grade: getStudentData[i]["Profile"]["additionalCirtificates"][1]["grade"], date: getStudentData[i]["Profile"]["additionalCirtificates"][1]["date"]),Certificate(certificateTitle: getStudentData[i]["Profile"]["additionalCirtificates"][2]["certificateName"], certificaIssuer: getStudentData[i]["Profile"]["additionalCirtificates"][2]["providerName"], grade: getStudentData[i]["Profile"]["additionalCirtificates"][2]["grade"], date: getStudentData[i]["Profile"]["additionalCirtificates"][2]["date"])], educationalCirtificates: [])
         profile: Profile(
-          brief: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["brief"],
-          profileAvatar: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["URLAvatar"],
+          brief: getAcademicAdvisorData[0]["Profile"]["brief"],
+          profileAvatar: getAcademicAdvisorData[0]["Profile"]["URLAvatar"],
           additionalCertificates: [],
           educationalCertificates: [],
-          role: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["role"],
-          department: getAcademicAdvisorData[0]
-          [FirebaseAuth.instance.currentUser!.uid]["Profile"]["department"],
+          role: getAcademicAdvisorData[0]["Profile"]["role"],
+          department: getAcademicAdvisorData[0]["Profile"]["department"],
         ),
       );
       for (int i = 0; i < getStudentData.length; i++) {
@@ -335,25 +323,21 @@ class LoadingData {
       print(getStudentData.length);
 
 
-      for (int j = 0; j < getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["additionalCirtificates"].length; j++) {
+      for (int j = 0; j < getAcademicAdvisorData[0]["Profile"]["additionalCirtificates"].length; j++) {
         Sultan.profile.additionalCertificates?.add(Certificate(
-          certificateTitle: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!
-              .uid]["Profile"]["additionalCirtificates"][j]["certificateName"],
-          certificateIssuer: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!
-              .uid]["Profile"]["additionalCirtificates"][j]["providerName"],
-          date: getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!
-              .uid]["Profile"]["additionalCirtificates"][j]["date"],
+          certificateTitle: getAcademicAdvisorData[0]["Profile"]["additionalCirtificates"][j]["certificateName"],
+          certificateIssuer: getAcademicAdvisorData[0]["Profile"]["additionalCirtificates"][j]["providerName"],
+          date: getAcademicAdvisorData[0]["Profile"]["additionalCirtificates"][j]["date"],
         ));
         print("QQQQQ");
         print(j);
         print("QQQQQ");
       }
 
-      for (int k = 0; k < getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["educationalCirtificates"]["Cirtificates"].length; k++) {
+      for (int k = 0; k < getAcademicAdvisorData[0]["Profile"]["educationalCirtificates"]["Cirtificates"].length; k++) {
 
         Sultan.profile.educationalCertificates.insert(k,
-            getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!
-                .uid]["Profile"]["educationalCirtificates"]["Cirtificates"][k]["eduDegree"]);
+            getAcademicAdvisorData[0]["Profile"]["educationalCirtificates"]["Cirtificates"][k]["eduDegree"]);
         print("AAAAAAAAAAAA");
 // print(getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["educationalCirtificates"].length.hashCode);
 // print(getAcademicAdvisorData[0][FirebaseAuth.instance.currentUser!.uid]["Profile"]["educationalCirtificates"][0]["eduDegree"]);
@@ -377,7 +361,7 @@ class LoadingData {
 
   List<dynamic> getAcademicAdvisor() {
     FirebaseDatabase.instance
-        .ref("AcademicAdvisor")
+        .ref("AcademicAdvisor").child("uid").child(FirebaseAuth.instance.currentUser!.uid)
         .orderByKey()
         .onValue
         .listen((event) {
@@ -388,7 +372,15 @@ class LoadingData {
       data.forEach((key, value) {
         log("$value");
       });
+      print("::::::::::::1");
+      print(data.values.toList());
+      print("::::::::::::2");
       getAcademicAdvisorData = data.values.toList();
+      print(getAcademicAdvisorData);
+      print("::::::::::::3");
+      print(data.values.toList());
+      print("::::::::::::4");
+
     });
 
     return getAcademicAdvisorData;

@@ -1,3 +1,2 @@
-2023/01/14-20:33:32.539 3884 Reusing MANIFEST C:\Users\PC\AppData\Local\Temp\flutter_tools.2316da6\flutter_tools_chrome_device.7f499dec\Default\EdgePushStorageWithConnectTokenAndKey/MANIFEST-000001
-2023/01/14-20:33:32.539 3884 Recovering log #3
-2023/01/14-20:33:32.539 3884 Reusing old log C:\Users\PC\AppData\Local\Temp\flutter_tools.2316da6\flutter_tools_chrome_device.7f499dec\Default\EdgePushStorageWithConnectTokenAndKey/000003.log 
+2023/01/15-18:02:34.363 7c38 Creating DB C:\Users\PC\AppData\Local\Temp\flutter_tools.1178c016\flutter_tools_chrome_device.f4cb04e8\Default\EdgePushStorageWithConnectTokenAndKey since it was missing.
+2023/01/15-18:02:34.367 7c38 Reusing MANIFEST C:\Users\PC\AppData\Local\Temp\flutter_tools.1178c016\flutter_tools_chrome_device.f4cb04e8\Default\EdgePushStorageWithConnectTokenAndKey/MANIFEST-000001
