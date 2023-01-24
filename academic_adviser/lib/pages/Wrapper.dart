@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:academic_adviser/Models/LoadingWidget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +8,6 @@ import 'package:provider/provider.dart';
 
 import '../Models/AAAUser.dart';
 import '../Models/AcademicAdvisor.dart';
-import '../Models/Attendance.dart';
 import '../Models/Certificate.dart';
 import '../Models/Course.dart';
 import '../Models/Note.dart';
@@ -17,18 +15,13 @@ import '../Models/Score.dart';
 import 'AcademicAdvisorView/ServicesPage/Services.dart';
 import 'LoadingWidgetA/Loadingwidgets.dart';
 import 'SignIn/SignIn.dart';
-import 'dart:developer';
 
-import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Alert.dart';
-import 'package:academic_adviser/Models/Certificate.dart';
-import 'package:academic_adviser/Models/Course.dart';
 import 'package:academic_adviser/Models/Office.dart';
 import 'package:academic_adviser/Models/OfficeHours.dart';
 import 'package:academic_adviser/Models/Profile.dart';
 import 'package:academic_adviser/Models/Student.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
+
 
 class Wrapper extends StatefulWidget {
   const Wrapper({Key? key}) : super(key: key);
