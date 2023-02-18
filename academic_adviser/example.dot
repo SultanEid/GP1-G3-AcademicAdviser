@@ -1,0 +1,630 @@
+digraph "" {
+  graph [style=rounded fontname="Arial Black" fontsize=13 penwidth=2.6];
+  node [shape=rect style="filled,rounded" fontname=Arial fontsize=15 fillcolor=Lavender penwidth=1.3];
+  edge [penwidth=1.3];
+  "/lib/firebase_options.dart" [label="firebase_options"];
+  "/lib/main.dart" [label="main"];
+  "/lib/Models/AAAUser.dart" [label="AAAUser"];
+  "/lib/Models/AcademicAdvisor.dart" [label="AcademicAdvisor"];
+  "/lib/Models/Alert.dart" [label="Alert"];
+  "/lib/Models/Appointment.dart" [label="Appointment"];
+  "/lib/Models/Attendance.dart" [label="Attendance"];
+  "/lib/Models/Certificate.dart" [label="Certificate"];
+  "/lib/Models/Course.dart" [label="Course"];
+  "/lib/Models/DatabaseVariable.dart" [label="DatabaseVariable"];
+  "/lib/Models/Note.dart" [label="Note"];
+  "/lib/Models/Office.dart" [label="Office"];
+  "/lib/Models/OfficeHours.dart" [label="OfficeHours"];
+  "/lib/Models/Profile.dart" [label="Profile"];
+  "/lib/Models/Score.dart" [label="Score"];
+  "/lib/Models/Student.dart" [label="Student"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" [label="Dashboard"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart" [label="AbsentsWidget"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart" [label="AlertsWidget"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart" [label="CoursesProgressWidget"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart" [label="LevelTimeLineWidget"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" [label="NotesWidget"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart" [label="ScheduleWidget"];
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart" [label="ScoresWidget"];
+  "/lib/pages/AcademicAdvisorView/Notes/Note/NoteCard.dart" [label="NoteCard"];
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" [label="Note"];
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" [label="Profile"];
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/BrifeWidget.dart" [label="BrifeWidget"];
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart" [label="CertificateCardWidget"];
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart" [label="CertificatesWidget"];
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/ProfileWidget.dart" [label="ProfileWidget"];
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" [label="Reports"];
+  "/lib/pages/AcademicAdvisorView/Reports/ReportWidget/ProfileWidget.dart" [label="ProfileWidget"];
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" [label="Scores"];
+  "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart" [label="ScoreDescription"];
+  "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoresSummaryTopCard.dart" [label="ScoresSummaryTopCard"];
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" [label="Services"];
+  "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart" [label="CardButton"];
+  "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart" [label="ServicesCard"];
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" [label="StudentsList"];
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart" [label="StudentsListView"];
+  "/lib/pages/LoadingWidgetA/Loadingwidgets.dart" [label="Loadingwidgets"];
+  "/lib/pages/Services/Authentication.dart" [label="Authentication"];
+  "/lib/pages/SignIn/SignIn.dart" [label="SignIn"];
+  "/lib/pages/SignIn/SignInWidgets/SignInCard.dart" [label="SignInCard"];
+  "/lib/pages/SignIn/SignInWidgets/SignInInputSection.dart" [label="SignInInputSection"];
+  "/lib/pages/SignIn/SignInWidgets/SignInLogoSection.dart" [label="SignInLogoSection"];
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" [label="Dashboard"];
+  "/lib/pages/StudentView/Notes/Note/NoteCard.dart" [label="NoteCard"];
+  "/lib/pages/StudentView/Notes/Note.dart" [label="Note"];
+  "/lib/pages/StudentView/Profile/Profile.dart" [label="Profile"];
+  "/lib/pages/StudentView/Profile/ProfileWidget/BrifeWidget.dart" [label="BrifeWidget"];
+  "/lib/pages/StudentView/Profile/ProfileWidget/CertificateCardWidget.dart" [label="CertificateCardWidget"];
+  "/lib/pages/StudentView/Profile/ProfileWidget/CertificatesWidget.dart" [label="CertificatesWidget"];
+  "/lib/pages/StudentView/Profile/ProfileWidget/ProfileWidget.dart" [label="ProfileWidget"];
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlan.dart" [label="StudentPlan"];
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart" [label="StudentPlanWidget"];
+  "/lib/pages/StudentView/Reports/Reports.dart" [label="Reports"];
+  "/lib/pages/StudentView/Reports/ReportWidget/ProfileWidget.dart" [label="ProfileWidget"];
+  "/lib/pages/StudentView/Scores/Scores.dart" [label="Scores"];
+  "/lib/pages/StudentView/Scores/ScoresWidget/ScoreDescription.dart" [label="ScoreDescription"];
+  "/lib/pages/StudentView/ServicesPage/Services.dart" [label="Services"];
+  "/lib/pages/StudentView/ServicesPage/ServicesWidget/CardButton.dart" [label="CardButton"];
+  "/lib/pages/StudentView/ServicesPage/ServicesWidget/ServicesCard.dart" [label="ServicesCard"];
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" [label="Profile"];
+  "/lib/pages/ThemeConfigA.dart" [label="ThemeConfigA"];
+  "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart" [label="AAA_Icons_Pack"];
+  "/lib/pages/UniversalWidgetAA/Backgraound.dart" [label="Backgraound"];
+  "/lib/pages/UniversalWidgetAA/MenuButton.dart" [label="MenuButton"];
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" [label="PageBase"];
+  "/lib/pages/Wrapper.dart" [label="Wrapper"];
+  "/test/widget_test.dart" [label="widget_test"];
+  subgraph "cluster~" {
+    label="academic_adviser";
+    subgraph "cluster~/lib" {
+      label="lib";
+      "/lib/firebase_options.dart";
+      "/lib/main.dart";
+      subgraph "cluster~/lib/Models" {
+        label="Models";
+        "/lib/Models/AAAUser.dart";
+        "/lib/Models/AcademicAdvisor.dart";
+        "/lib/Models/Alert.dart";
+        "/lib/Models/Appointment.dart";
+        "/lib/Models/Attendance.dart";
+        "/lib/Models/Certificate.dart";
+        "/lib/Models/Course.dart";
+        "/lib/Models/DatabaseVariable.dart";
+        "/lib/Models/Note.dart";
+        "/lib/Models/Office.dart";
+        "/lib/Models/OfficeHours.dart";
+        "/lib/Models/Profile.dart";
+        "/lib/Models/Score.dart";
+        "/lib/Models/Student.dart";
+      }
+      subgraph "cluster~/lib/pages" {
+        label="pages";
+        "/lib/pages/ThemeConfigA.dart";
+        "/lib/pages/Wrapper.dart";
+        subgraph "cluster~/lib/pages/AcademicAdvisorView" {
+          label="AcademicAdvisorView";
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/Dashboard" {
+            label="Dashboard";
+            "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget" {
+              label="DashboardWidget";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/Notes" {
+            label="Notes";
+            "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/Notes/Note" {
+              label="Note";
+              "/lib/pages/AcademicAdvisorView/Notes/Note/NoteCard.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/Profile" {
+            label="Profile";
+            "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/Profile/ProfileWidget" {
+              label="ProfileWidget";
+              "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/BrifeWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart";
+              "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/ProfileWidget.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/Reports" {
+            label="Reports";
+            "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/Reports/ReportWidget" {
+              label="ReportWidget";
+              "/lib/pages/AcademicAdvisorView/Reports/ReportWidget/ProfileWidget.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/Scores" {
+            label="Scores";
+            "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/Scores/ScoresWidget" {
+              label="ScoresWidget";
+              "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart";
+              "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoresSummaryTopCard.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/ServicesPage" {
+            label="ServicesPage";
+            "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget" {
+              label="ServicesWidget";
+              "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart";
+              "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/AcademicAdvisorView/StudentList" {
+            label="StudentList";
+            "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+            subgraph "cluster~/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget" {
+              label="StudentsListWidget";
+              "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart";
+            }
+          }
+        }
+        subgraph "cluster~/lib/pages/LoadingWidgetA" {
+          label="LoadingWidgetA";
+          "/lib/pages/LoadingWidgetA/Loadingwidgets.dart";
+        }
+        subgraph "cluster~/lib/pages/Services" {
+          label="Services";
+          "/lib/pages/Services/Authentication.dart";
+        }
+        subgraph "cluster~/lib/pages/SignIn" {
+          label="SignIn";
+          "/lib/pages/SignIn/SignIn.dart";
+          subgraph "cluster~/lib/pages/SignIn/SignInWidgets" {
+            label="SignInWidgets";
+            "/lib/pages/SignIn/SignInWidgets/SignInCard.dart";
+            "/lib/pages/SignIn/SignInWidgets/SignInInputSection.dart";
+            "/lib/pages/SignIn/SignInWidgets/SignInLogoSection.dart";
+          }
+        }
+        subgraph "cluster~/lib/pages/StudentView" {
+          label="StudentView";
+          subgraph "cluster~/lib/pages/StudentView/Dashboard" {
+            label="Dashboard";
+            "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+          }
+          subgraph "cluster~/lib/pages/StudentView/Notes" {
+            label="Notes";
+            "/lib/pages/StudentView/Notes/Note.dart";
+            subgraph "cluster~/lib/pages/StudentView/Notes/Note" {
+              label="Note";
+              "/lib/pages/StudentView/Notes/Note/NoteCard.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/StudentView/Profile" {
+            label="Profile";
+            "/lib/pages/StudentView/Profile/Profile.dart";
+            subgraph "cluster~/lib/pages/StudentView/Profile/ProfileWidget" {
+              label="ProfileWidget";
+              "/lib/pages/StudentView/Profile/ProfileWidget/BrifeWidget.dart";
+              "/lib/pages/StudentView/Profile/ProfileWidget/CertificateCardWidget.dart";
+              "/lib/pages/StudentView/Profile/ProfileWidget/CertificatesWidget.dart";
+              "/lib/pages/StudentView/Profile/ProfileWidget/ProfileWidget.dart";
+              "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlan.dart";
+              "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/StudentView/Reports" {
+            label="Reports";
+            "/lib/pages/StudentView/Reports/Reports.dart";
+            subgraph "cluster~/lib/pages/StudentView/Reports/ReportWidget" {
+              label="ReportWidget";
+              "/lib/pages/StudentView/Reports/ReportWidget/ProfileWidget.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/StudentView/Scores" {
+            label="Scores";
+            "/lib/pages/StudentView/Scores/Scores.dart";
+            subgraph "cluster~/lib/pages/StudentView/Scores/ScoresWidget" {
+              label="ScoresWidget";
+              "/lib/pages/StudentView/Scores/ScoresWidget/ScoreDescription.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/StudentView/ServicesPage" {
+            label="ServicesPage";
+            "/lib/pages/StudentView/ServicesPage/Services.dart";
+            subgraph "cluster~/lib/pages/StudentView/ServicesPage/ServicesWidget" {
+              label="ServicesWidget";
+              "/lib/pages/StudentView/ServicesPage/ServicesWidget/CardButton.dart";
+              "/lib/pages/StudentView/ServicesPage/ServicesWidget/ServicesCard.dart";
+            }
+          }
+          subgraph "cluster~/lib/pages/StudentView/StudentAcadimicAdvisorProfile" {
+            label="StudentAcadimicAdvisorProfile";
+            "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+          }
+        }
+        subgraph "cluster~/lib/pages/UniversalWidgetAA" {
+          label="UniversalWidgetAA";
+          "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+          "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+          "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+          "/lib/pages/UniversalWidgetAA/PageBase.dart";
+        }
+      }
+    }
+    subgraph "cluster~/test" {
+      label="test";
+      "/test/widget_test.dart";
+    }
+  }
+  "/lib/main.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/main.dart" -> "/lib/firebase_options.dart";
+  "/lib/main.dart" -> "/lib/pages/Wrapper.dart";
+  "/lib/main.dart" -> "/lib/Models/AAAUser.dart";
+  "/lib/main.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/Models/AAAUser.dart" -> "/lib/Models/Profile.dart";
+  "/lib/Models/AcademicAdvisor.dart" -> "/lib/Models/Course.dart";
+  "/lib/Models/AcademicAdvisor.dart" -> "/lib/Models/Office.dart";
+  "/lib/Models/AcademicAdvisor.dart" -> "/lib/Models/OfficeHours.dart";
+  "/lib/Models/AcademicAdvisor.dart" -> "/lib/Models/Profile.dart";
+  "/lib/Models/AcademicAdvisor.dart" -> "/lib/Models/Student.dart";
+  "/lib/Models/AcademicAdvisor.dart" -> "/lib/Models/AAAUser.dart";
+  "/lib/Models/Course.dart" -> "/lib/Models/Appointment.dart";
+  "/lib/Models/Course.dart" -> "/lib/Models/Attendance.dart";
+  "/lib/Models/Profile.dart" -> "/lib/Models/Certificate.dart";
+  "/lib/Models/Score.dart" -> "/lib/Models/Course.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/Note.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/Profile.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/Score.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/AAAUser.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/Alert.dart";
+  "/lib/Models/Student.dart" -> "/lib/Models/Course.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart" -> "/lib/Models/Alert.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" -> "/lib/Models/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart" -> "/lib/Models/Appointment.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart" -> "/lib/Models/Course.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note/NoteCard.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note/NoteCard.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note/NoteCard.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/Notes/Note.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/BrifeWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/ProfileWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/BrifeWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart" -> "/lib/Models/Certificate.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificateCardWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/ProfileWidget.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/ProfileWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Reports/ReportWidget/ProfileWidget.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/ReportWidget/ProfileWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Reports/ReportWidget/ProfileWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/Models/Score.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoresSummaryTopCard.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/Wrapper.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/Models/Course.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/Models/Score.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/Wrapper.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart";
+  "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/AcademicAdvisorView/StudentList/StudentsListWidget/StudentsListView.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/Services/Authentication.dart" -> "/lib/Models/AAAUser.dart";
+  "/lib/pages/SignIn/SignIn.dart" -> "/lib/pages/SignIn/SignInWidgets/SignInCard.dart";
+  "/lib/pages/SignIn/SignIn.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/SignIn/SignIn.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/SignIn/SignInWidgets/SignInCard.dart" -> "/lib/pages/SignIn/SignInWidgets/SignInInputSection.dart";
+  "/lib/pages/SignIn/SignInWidgets/SignInCard.dart" -> "/lib/pages/SignIn/SignInWidgets/SignInLogoSection.dart";
+  "/lib/pages/SignIn/SignInWidgets/SignInInputSection.dart" -> "/lib/Models/AAAUser.dart";
+  "/lib/pages/SignIn/SignInWidgets/SignInInputSection.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/SignIn/SignInWidgets/SignInInputSection.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScheduleWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/Reports/Reports.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/Scores/Scores.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+  "/lib/pages/StudentView/Dashboard/Dashboard.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/Notes/Note/NoteCard.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/Models/Note.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/Reports/Reports.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/Scores/Scores.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+  "/lib/pages/StudentView/Notes/Note.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Profile/ProfileWidget/BrifeWidget.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Profile/ProfileWidget/CertificatesWidget.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Profile/ProfileWidget/ProfileWidget.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Reports/Reports.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/Scores/Scores.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+  "/lib/pages/StudentView/Profile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/BrifeWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/CertificateCardWidget.dart" -> "/lib/Models/Certificate.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/CertificateCardWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/CertificatesWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/CertificatesWidget.dart" -> "/lib/pages/StudentView/Profile/ProfileWidget/CertificateCardWidget.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/ProfileWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/ProfileWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlan.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart" -> "/lib/Models/Course.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Profile/ProfileWidget/StudentPlanWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/CoursesProgressWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/Reports/ReportWidget/ProfileWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AbsentsWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/AlertsWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/LevelTimeLineWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/NotesWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/DashboardWidget/ScoresWidget.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/Scores/Scores.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+  "/lib/pages/StudentView/Reports/Reports.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/Reports/ReportWidget/ProfileWidget.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Reports/ReportWidget/ProfileWidget.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/Scores/ScoresWidget/ScoreDescription.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/AcademicAdvisorView/Scores/ScoresWidget/ScoresSummaryTopCard.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/Reports/Reports.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+  "/lib/pages/StudentView/Scores/Scores.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/Models/Score.dart";
+  "/lib/pages/StudentView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/Scores/ScoresWidget/ScoreDescription.dart" -> "/lib/Models/Course.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/ServicesCard.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/StudentView/Reports/Reports.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/StudentView/Scores/Scores.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/ServicesPage/Services.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/ServicesPage/ServicesWidget/CardButton.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/ServicesPage/ServicesWidget/ServicesCard.dart" -> "/lib/pages/StudentView/ServicesPage/ServicesWidget/CardButton.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/StudentView/Notes/Note.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/StudentView/Profile/Profile.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/StudentView/Reports/Reports.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/StudentView/Scores/Scores.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/BrifeWidget.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/CertificatesWidget.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/AcademicAdvisorView/Profile/ProfileWidget/ProfileWidget.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/StudentView/StudentAcadimicAdvisorProfile/Profile.dart" -> "/lib/pages/StudentView/Dashboard/Dashboard.dart";
+  "/lib/pages/UniversalWidgetAA/Backgraound.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/UniversalWidgetAA/MenuButton.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/ThemeConfigA.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/UniversalWidgetAA/Backgraound.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/Reports/Reports.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/StudentList/StudentsList.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/UniversalWidgetAA/MenuButton.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/Dashboard/Dashboard.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/Notes/Note.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/Profile/Profile.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/AcademicAdvisorView/Scores/Scores.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/Services/Authentication.dart";
+  "/lib/pages/UniversalWidgetAA/PageBase.dart" -> "/lib/pages/UniversalWidgetAA/AAA_Icons_Pack.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/AAAUser.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/AcademicAdvisor.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Appointment.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Attendance.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Certificate.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Course.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Note.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Score.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/pages/AcademicAdvisorView/ServicesPage/Services.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/pages/LoadingWidgetA/Loadingwidgets.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/pages/SignIn/SignIn.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Alert.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Office.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/OfficeHours.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Profile.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/Models/Student.dart";
+  "/lib/pages/Wrapper.dart" -> "/lib/pages/StudentView/ServicesPage/Services.dart";
+  "/test/widget_test.dart" -> "/lib/pages/Wrapper.dart";
+}

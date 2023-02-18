@@ -1,23 +1,30 @@
 import 'package:academic_adviser/Models/Score.dart';
 import 'package:academic_adviser/Models/Student.dart';
-import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+import 'package:academic_adviser/pages/ThemeConfigA.dart';
+import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ScoreDescription extends StatelessWidget {
-  const ScoreDescription(
+   ScoreDescription(
       {Key? key,
       required this.score,
       required this.color,
       required this.stdList,
-      required this.current})
-      : super(key: key);
+      required this.current,
+        required this.advisorScore,
+        required this.deleteScore, required this.themeConfig,
+      })
+      : super(key: UniqueKey());
   final Score score;
   final Color color;
   final List<Student> stdList;
-
+  double advisorScore;
+  VoidCallback deleteScore;
+  int stdCureent=0;
   final int current;
+  final ThemeConfig themeConfig;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +69,9 @@ class ScoreDescription extends StatelessWidget {
                                 width: 1.5.sp),
                             shape: BoxShape.circle),
                         child: IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            deleteScore();
+                          },
                           icon: Icon(
                             AAA_Icons_Pack.delete,
                             color: Colors.white,
@@ -70,28 +79,6 @@ class ScoreDescription extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.only(left: 10.w),
-                        width: 50.w,
-                        height: 50.h,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(colors: [
-                              Color.fromARGB(255, 96, 220, 220),
-                              Color.fromARGB(255, 114, 72, 185),
-                            ]),
-                            border: Border.all(
-                                color: Color.fromARGB(255, 112, 112, 112),
-                                width: 1.5.sp),
-                            shape: BoxShape.circle),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            AAA_Icons_Pack.edit,
-                            color: Colors.white,
-                            size: 20.sp,
-                          ),
-                        ),
-                      )
                     ],
                   ),
                 ),
@@ -104,13 +91,16 @@ class ScoreDescription extends StatelessWidget {
                         children: [
                           Container(
                             width: 601.w,
-                            child: Text(
-                              score.scoreDescription.toString(),
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                fontSize: 26.sp,
-                                fontFamily: 'Tajawal',
-                                color: Color.fromARGB(255, 112, 112, 112),
+                            height: 100.h,
+                            child: SingleChildScrollView(
+                              child: Text(
+                                score.scoreDescription.toString(),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  fontSize: 26.sp,
+                                  fontFamily: 'Tajawal',
+                                  color: Color.fromARGB(255, 112, 112, 112),
+                                ),
                               ),
                             ),
                           ),
@@ -145,7 +135,7 @@ class ScoreDescription extends StatelessWidget {
                                           children: [
                                             Expanded(
                                               child: Text(
-                                                '${score.scoreCourses[index].courseCode}${score.scoreCourses[index].courseNumber}',
+                                                '${score.scoreCourses[index].courseID}',
                                                 textAlign: TextAlign.left,
                                                 style: TextStyle(
                                                   fontSize: 26.sp,
@@ -155,6 +145,7 @@ class ScoreDescription extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
+
                                             Expanded(
                                               child: Text(
                                                 score.coursesPercentage[index]
@@ -179,12 +170,7 @@ class ScoreDescription extends StatelessWidget {
                                               gradient: LinearGradient(
                                                   begin: Alignment.topLeft,
                                                   end: Alignment.bottomRight,
-                                                  colors: [
-                                                Color.fromARGB(
-                                                    255, 96, 220, 220),
-                                                Color.fromARGB(
-                                                    255, 114, 72, 185)
-                                              ])),
+                                                  colors: themeConfig.primaryGradientColor)),
                                         )
                                       ],
                                     ),
@@ -218,7 +204,7 @@ class ScoreDescription extends StatelessWidget {
                                     thickness: 7.sp, color: Colors.transparent),
                                 pointers: [
                                   RangePointer(
-                                    value: score.score!,
+                                    value: advisorScore,
                                     width: 15.sp,
                                     color: color,
                                   )
@@ -228,7 +214,7 @@ class ScoreDescription extends StatelessWidget {
                                     positionFactor: 0.2,
                                     angle: 90,
                                     widget: Text(
-                                      score.score!
+                                      advisorScore
                                           .toStringAsFixed(0)
                                           .toString(),
                                       style: TextStyle(
@@ -238,7 +224,8 @@ class ScoreDescription extends StatelessWidget {
                                           fontSize: 138.sp),
                                     ),
                                   ),
-                                ]),
+                                ]
+                            ),
                           ],
                         ),
                       ),
@@ -265,50 +252,61 @@ class ScoreDescription extends StatelessWidget {
             child: ListView.builder(
                 itemCount: stdList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    alignment: Alignment.center,
-                    margin: EdgeInsets.symmetric(vertical: 10.h),
-                    padding: EdgeInsets.symmetric(horizontal: 10.w),
-                    width: 501.w,
-                    height: 83.h,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.sp)),
+                  return RawMaterialButton(
+                    onPressed: (){
+                      stdCureent=index;
+                      },
                     child: Row(
                       children: [
                         Expanded(
-                          child: Text(
-                            '${stdList[index].firstName} ${stdList[index].lastName}',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontSize: 30.sp,
-                              fontFamily: 'Tajawal',
-                              color: Color.fromARGB(255, 74, 74, 74),
-                            ),
-                          ),
-                        ),
-                        Container(
+                          child: Container(
                           alignment: Alignment.center,
-                          width: 140.w,
-                          height: 47.h,
+                          margin: EdgeInsets.symmetric(vertical: 10.h),
+                          padding: EdgeInsets.symmetric(horizontal: 10.w),
+                          width: 501.w,
+                          height: 83.h,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 113, 99, 192),
-                              borderRadius: BorderRadius.circular(25.sp)),
-                          child: Text(
-                            stdList[index]
-                                    .score![current]
-                                    .score!
-                                    .toStringAsFixed(0) +
-                                '%',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25.sp,
-                              fontFamily: 'Tajawal',
                               color: Colors.white,
-                            ),
+                              borderRadius: BorderRadius.circular(10.sp)),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  '${stdList[index].firstName} ${stdList[index].lastName}',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    fontSize: 30.sp,
+                                    fontFamily: 'Tajawal',
+                                    color: Color.fromARGB(255, 74, 74, 74),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                alignment: Alignment.center,
+                                width: 140.w,
+                                height: 47.h,
+                                decoration: BoxDecoration(
+                                    color: themeConfig.studentListButton,
+                                    borderRadius: BorderRadius.circular(25.sp)),
+                                child: Text(
+                                  stdList[index]
+                                      .score![current]
+                                      .score!
+                                      .toStringAsFixed(0) +
+                                      '%',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25.sp,
+                                    fontFamily: 'Tajawal',
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
-                        )
+                  ),
+                        ),
                       ],
                     ),
                   );
@@ -318,4 +316,5 @@ class ScoreDescription extends StatelessWidget {
       ),
     );
   }
+
 }

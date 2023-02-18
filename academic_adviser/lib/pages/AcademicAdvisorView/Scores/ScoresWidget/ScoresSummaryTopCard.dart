@@ -1,12 +1,9 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class ScoresSummaryTopCard extends StatelessWidget {
-  const ScoresSummaryTopCard({Key? key, required this.title, required this.percent, required this.color}) : super(key: key);
-
+  ScoresSummaryTopCard({required this.title, required this.percent, required this.color});
   final String title;
   final double percent;
   final Color color;
@@ -48,18 +45,19 @@ class ScoresSummaryTopCard extends StatelessWidget {
                           fontFamily: 'Tajawal',
                           color: color,
                           fontWeight: FontWeight.bold,
-                          fontSize: 66.sp
+                          fontSize: 66.sp,
                       ),
                     ),),
                 GaugeAnnotation(
-                  positionFactor: 1.2,
+                  positionFactor: 1.3,
                   angle: 90,
                   widget: Text(title,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontFamily: 'Tajawal',
                         color: color,
                         fontWeight: FontWeight.bold,
-                        fontSize: 20
+                        fontSize: 20.sp
                     ),
                   ),),
               ]
