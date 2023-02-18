@@ -10,18 +10,6 @@ class AAAUser {
   late String _academicEmail;
   late String _phone;
   late Profile _profile;
-  bool _theme = true;
-
-  AAAUser.AcademicAdvisorProfile({
-    required String firstName,
-    required String lastName,
-    required String academicEmail,
-    required Profile profile,
-  }):
-        _firstName = firstName,
-        _lastName = lastName,
-        _academicEmail = academicEmail,
-        _profile = profile;
 
   AAAUser({
     required String uid,
@@ -38,15 +26,10 @@ class AAAUser {
         _academicID = academicID,
         _academicEmail = academicEmail,
         _profile = profile,
-        _phone = phone;
+  _phone = phone;
+
 
   AAAUser.Auth(this._uid);
-
-  bool get theme => _theme;
-
-  set theme(bool value) {
-    _theme = value;
-  }
 
   Profile get profile => _profile;
 

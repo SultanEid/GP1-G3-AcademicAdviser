@@ -1,82 +1,27 @@
 
-import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Note.dart';
-import 'package:academic_adviser/Models/Student.dart';
-import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
-import 'package:firebase_database/firebase_database.dart';
+import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
-import '../../../StudentView/Notes/Note.dart';
-import '../../Notes/Note.dart';
+import '../../../../Models/Student.dart';
 class NotesWidgetDB extends StatefulWidget {
-  NotesWidgetDB({Key? key ,required this.student, this.margin, this.selectedStudent,this.advisor,required this.isAdvisorView}) : super(key: key);
+   NotesWidgetDB({Key? key ,required this.student}) : super(key: key);
   Student student;
-  AcademicAdvisor? advisor;
-  double? margin;
-  int? selectedStudent;
-  bool isAdvisorView;
   @override
-  State<NotesWidgetDB> createState() => _NotesWidgetDB(student: student,margin: margin,advisor:advisor);
+  State<NotesWidgetDB> createState() => _NotesWidgetDB(student: student);
 }
 
 class _NotesWidgetDB extends State<NotesWidgetDB> {
-  _NotesWidgetDB({required this.student, this.margin,this.advisor});
+  _NotesWidgetDB({required this.student});
   Student student;
-  double? margin;
-  bool readData = true;
- static Map<String, dynamic> studentNotes = {};
-AcademicAdvisor? advisor;
- static List<String> noteKeys = [];
-  void ReadNote() async {
-    noteKeys.clear();
-    studentNotes.clear();
-    student.notes!.clear();
-    await FirebaseDatabase.instance
-        .ref("Student")
-        .child(student.uid)
-        .child("StudentNotes").once().then((Event) {
-
-      Map<String, dynamic>? stuNotes =
-      Event.snapshot.value as Map<String, dynamic>?;
-      studentNotes = Map.fromEntries(
-          stuNotes!.entries.map((e) => MapEntry(e.key, e.value)));
 
 
-      noteKeys = studentNotes.keys.toList();
-
-      for(int i=0;i<noteKeys.length;i++){
-        student.notes!.insert(i,Note(noteID: studentNotes[noteKeys[i]]["NoteID"], receiver: studentNotes[noteKeys[i]]["Reciver"], noteContent: studentNotes[noteKeys[i]]["Text"]));
-      }
-      student.notes!.removeAt(0);
-    });
-  }
-
-  void RemoveAdvisorNotes(){
-    List<Note> onlyStudentNotes = [];
-    for(int i =0;i<student.notes!.length;i++){
-      if(student.notes![i].receiver=="Student"){
-        onlyStudentNotes.add(student.notes![i]);
-      }
-    }
-    student.notes=onlyStudentNotes;
-  }
   @override
   Widget build(BuildContext context) {
-    if(readData && widget.isAdvisorView){
-
-      Future.delayed(Duration(milliseconds: 10), () {
-        setState(() {
-          ReadNote();
-          readData = false;
-        });
-      });
-    }
-    if(!widget.isAdvisorView){
-      RemoveAdvisorNotes();
-    }
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: margin == null? 15.w:margin!.w),
+      margin: EdgeInsets.symmetric(horizontal: 15.w),
       width: 351.w,
       height: 306.h,
       alignment: Alignment.center,
@@ -89,26 +34,14 @@ AcademicAdvisor? advisor;
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 10.h),
-                child: TextButton(
-                  onPressed: () {
-                    if(widget.isAdvisorView){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Notes(user: advisor!,selectedStudent: widget.selectedStudent,)),
-                      );
-                    }else{
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => StudentNotes(user: student,)),);
-                    }
-                  }, // add navigate here-------------------
-                  child: Text(
-                    'NOTES',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30.sp,
-                      fontFamily: 'Tajawal',
-                      color: Colors.black,
-                    ),
+                child: Text(
+                  'NOTES',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30.sp,
+                    fontFamily: 'Tajawal',
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -118,7 +51,7 @@ AcademicAdvisor? advisor;
                 child: ListView.builder(
                     itemCount: student.notes!.length,
                     itemBuilder: (context, index) {
-                      return NoteCardWidgtDB(note: student.notes![index],);
+                      return NoteCardWidgtDB(note: student.notes![index]);
                     }),
               ),
             ],
@@ -126,6 +59,39 @@ AcademicAdvisor? advisor;
           Container(
             margin: EdgeInsets.only(right: 15.w,bottom: 15.h),
             alignment: Alignment.bottomRight,
+            child: Container(
+              width: 20.w,
+              height: 20.h,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(4.sp)),
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                  colors: [
+                    Color.fromARGB(255, 96, 220, 220),
+                    Color.fromARGB(255, 114, 72, 185),
+                  ]
+                )
+              ),
+              child: FloatingActionButton(
+                backgroundColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverElevation: 0,
+                highlightElevation: 0,
+                elevation: 0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(4.sp)),
+                ),
+                onPressed: () {},
+                child: Icon(
+                    Icons.add,
+                  size: 20.sp,
+                  color: Colors.white,
+                ),
+              ),
+            )
           ),
         ],
       )
@@ -134,7 +100,7 @@ AcademicAdvisor? advisor;
 }
 
 class NoteCardWidgtDB extends StatelessWidget {
-  NoteCardWidgtDB({Key? key,required this.note}) : super(key: key);
+  NoteCardWidgtDB({Key? key, required this.note}) : super(key: key);
   final Note note;
 
   @override
@@ -232,6 +198,26 @@ class NoteCardWidgtDB extends StatelessWidget {
                 Container(
                   width: 35.w,
                   height: 35.h,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 248, 76, 76),
+                      shape: BoxShape.circle),
+                  child: IconButton(
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    splashColor: Colors.transparent,
+                    padding: EdgeInsets.zero,
+                    onPressed: () {},
+                    icon: Icon(
+                      AAA_Icons_Pack.delete,
+                      color: Colors.white,
+                      size: 20.sp,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 35.w,
+                  height: 35.h,
                   child: Icon(
                     AAA_Icons_Pack.notification,
                     color: Colors.white,
@@ -246,7 +232,7 @@ class NoteCardWidgtDB extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        note.noteContent,
+                        note.noteContent!,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 16.sp,
