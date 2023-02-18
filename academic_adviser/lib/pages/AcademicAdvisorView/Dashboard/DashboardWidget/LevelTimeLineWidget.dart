@@ -1,242 +1,172 @@
 import 'package:academic_adviser/Models/Student.dart';
-import 'package:academic_adviser/pages/ThemeConfigA.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:timelines/timelines.dart';
 
-class LevelTimeLineDB extends StatelessWidget  {
-  LevelTimeLineDB({Key? key, required this.student, required this.themeConfig}) : super(key: key);
-  Student student;
-  ThemeConfig themeConfig;
-  DateTime startDate = DateTime(2018,10,1); // to be edited
-
-  int calculateCurrentStudentLevel(int creditHours){
-    return (creditHours/10).floor();
-  }
-
-  int calculateExpectedStudentLevel(DateTime startDate){
-    return ((DateTime.now().difference(startDate).inDays/365)*3).floor();
-  }
-
-  String specifyStudentStatus(int creditHours , DateTime startDate){
-    int currentLevel= calculateCurrentStudentLevel(creditHours);
-    int expectedLevel = calculateExpectedStudentLevel(startDate);
-    String status ="";
-
-    if(currentLevel<expectedLevel){
-      status="Off plan";
-    }else if(currentLevel>expectedLevel){
-      status="Advanced";
-    }else if(currentLevel==expectedLevel){
-      status="On plan";
-    }
-
-    return status;
-  }
-
-  int calculateExpectedGraduationYear(int creditHours , DateTime startDate){
-    int currentLevel = calculateCurrentStudentLevel(creditHours);
-    int studyingDuration = DateTime.now().difference(startDate).inDays;
-
-    int expectedStudyingDuration = ((studyingDuration * 15)/currentLevel).floor();
-    DateTime date = startDate.add(Duration(days: expectedStudyingDuration));
-    int result = date.year;
-
-    return result;
-  }
-
-
-
+class LevelTimeLineDB extends StatelessWidget {
+  LevelTimeLineDB({Key? key}) : super(key: key);
+  int Currentlevel = 10;
+  int lateLevel = 12;
+  String Status = 'On Plan';
+  int ExpectedGraduation = 2023;
+  List<String> labels = ['Level','Status', 'Expected Graduation'];
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
-        width: 649.w,
-        height: 149.h,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30.sp), color: Colors.white),
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.only(bottom: 12.h),
-              width: 649.w,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Text(
-                    'Level Timeline',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontFamily: 'Tajawal',
-                        fontSize: 25.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black
+      margin: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
+      width: 649.w,
+      height: 149.h,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30.sp), color: Colors.white),
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(bottom: 12.h),
+            width: 649.w,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Text(
+                  'Level Timeline',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontFamily: 'Tajawal',
+                      fontSize: 25.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 10.h,right: 17.w),
+                    width: 165.w,
+                    height: 52.h,
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 76, 76, 76),
+                      borderRadius: BorderRadius.circular(7.sp)
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.only(right: 10.w,left: 10.w,top: 5.h),
+                            alignment: Alignment.center,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Text(
+                                    labels[0],
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontSize: 10.sp,
+                                      fontFamily: 'Tajawal',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    Currentlevel.toString(),
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                      fontSize: 10.sp,
+                                      fontFamily: 'Tajawal',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                            alignment: Alignment.center,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Text(
+                                    labels[1],
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontSize: 10.sp,
+                                      fontFamily: 'Tajawal',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    Status,
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                      fontSize: 10.sp,
+                                      fontFamily: 'Tajawal',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 10.w),
+                            alignment: Alignment.center,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Text(
+                                    labels[2],
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                      fontSize: 10.sp,
+                                      fontFamily: 'Tajawal',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Text(
+                                    ExpectedGraduation.toString(),
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                      fontSize: 10.sp,
+                                      fontFamily: 'Tajawal',
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ]
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Container(
-                      margin: EdgeInsets.only(top: 10.h,right: 17.w),
-                      width: 165.w,
-                      height: 52.h,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 76, 76, 76),
-                          borderRadius: BorderRadius.circular(7.sp)
-                      ),
-                      child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Expanded(
-                              child: Container(
-                                padding: EdgeInsets.only(right: 10.w,left: 10.w,top: 5.h),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 2,
-                                      child: Text(
-                                        'Level',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Text(
-                                        '${calculateCurrentStudentLevel(student.totalHours)}',
-                                        textAlign: TextAlign.right,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                padding: EdgeInsets.only(right: 10.w,left: 10.w,top: 5.h),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 2,
-                                      child: Text(
-                                        'Expected Level',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Text(
-                                        '${calculateExpectedStudentLevel(startDate)}',
-                                        textAlign: TextAlign.right,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 2,
-                                      child: Text(
-                                        'Status',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Text(
-                                        '${specifyStudentStatus(student.totalHours, startDate)}',
-                                        textAlign: TextAlign.right,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(horizontal: 10.w),
-                                alignment: Alignment.center,
-                                child: Row(
-                                  children: [
-                                    Expanded(
-                                      flex: 3,
-                                      child: Text(
-                                        'Expected Graduation Year',
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Text(
-                                        '${calculateExpectedGraduationYear(student.totalHours, startDate)}',
-                                        textAlign: TextAlign.right,
-                                        style: TextStyle(
-                                          fontSize: 10.sp,
-                                          fontFamily: 'Tajawal',
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ]
-                      ),
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
-            TimelineWidgetDB(
-                Currentlevel: calculateCurrentStudentLevel(student.totalHours),
-                lateLevel: calculateExpectedStudentLevel(startDate),
-                Status: specifyStudentStatus(student.totalHours, startDate),
-                ExpectedGraduation: calculateExpectedGraduationYear(student.totalHours, startDate), themeConfig: themeConfig,),
-          ],
-        )
+          ),
+          TimelineWidgetDB(
+              Currentlevel: Currentlevel,
+              lateLevel: lateLevel,
+              Status: Status,
+              ExpectedGraduation: ExpectedGraduation),
+        ],
+      )
     );
   }
 }
@@ -247,13 +177,17 @@ class TimelineWidgetDB extends StatelessWidget {
       required this.Currentlevel,
       required this.lateLevel,
       required this.Status,
-      required this.ExpectedGraduation, required this.themeConfig})
+      required this.ExpectedGraduation})
       : super(key: key);
-  final ThemeConfig themeConfig;
   final int Currentlevel;
   final int lateLevel;
   final String Status;
   final int ExpectedGraduation;
+
+  List<Color> colors = [
+    Color.fromARGB(255, 96, 220, 220),
+    Color.fromARGB(255, 114, 72, 185),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -280,7 +214,7 @@ class TimelineWidgetDB extends StatelessWidget {
                 width: Currentlevel > 14? (44 * 14).w :  (44 * Currentlevel).w,
                 height: 3.h,
                 decoration:
-                BoxDecoration(gradient: LinearGradient(colors: themeConfig.primaryGradientColor)),
+                BoxDecoration(gradient: LinearGradient(colors: colors)),
               ),
             ],
           ),
@@ -294,13 +228,13 @@ class TimelineWidgetDB extends StatelessWidget {
                     CustomInnerDot = BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
-                            colors: themeConfig.primaryGradientColor
+                            colors: colors
                         )
                     );
                     CustomOuterDot = BoxDecoration(
                         shape: BoxShape.circle,
                         gradient: LinearGradient(
-                            colors: themeConfig.primaryGradientColor
+                            colors: colors
                         )
                     );
                   }else if(e.key <lateLevel){
@@ -346,7 +280,7 @@ class TimelineWidgetDB extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.sp),
                         gradient: LinearGradient(
-                          colors: (e.key+1) == Currentlevel? themeConfig.primaryGradientColor : [Colors.transparent,Colors.transparent],
+                          colors: (e.key+1) == Currentlevel? colors : [Colors.transparent,Colors.transparent],
                         ),
                       ),
                       child: Text(
