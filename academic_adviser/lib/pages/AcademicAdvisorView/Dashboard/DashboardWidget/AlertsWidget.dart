@@ -1,34 +1,72 @@
-import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+import 'package:academic_adviser/Models/Alert.dart';
+import 'package:academic_adviser/Models/Student.dart';
+import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
-import '../../../../Models/Alert.dart';
-import '../../../../Models/Student.dart';
+import '../../../../Models/Attendance.dart';
+import '../../../../Models/Course.dart';
+import '../../../../Models/Score.dart';
 
 
 class AlertsWidgetDB extends StatefulWidget {
-   AlertsWidgetDB({Key? key ,required this.students}) : super(key: key);
-   Student students;
+  AlertsWidgetDB({Key? key ,required this.students, this.margin}) : super(key: key);
+  Student students;
+  double? margin;
   @override
-  State<AlertsWidgetDB> createState() => _AlertsWidgetDB(students: students);
+  State<AlertsWidgetDB> createState() => _AlertsWidgetDB(students: students,margin: margin);
 }
 
 class _AlertsWidgetDB extends State<AlertsWidgetDB> {
-  _AlertsWidgetDB({required this.students});
-  // List<Alert> stdAlert = [
-  //   Alert(
-  //       alertContent: '20% Absents',
-  //       alertDate: DateTime.utc(2022, 6, 20).toString(),
-  //       alertDegree: 2,
-  //       content: 'CS451', ),
-  // ];
-   Student students;
+  _AlertsWidgetDB({required this.students, this.margin});
+  Student students;
+  double? margin;
 
+  alerts() {
+    for (int i = 0; i < students.currentStudyingCourses.length; i++) {
+      Course getCourse = students.currentStudyingCourses[i];
+      Attendance? getAttendance = getCourse.attendance;
+      double attendesPS = getAttendance!.absentsPercentage!;
+      var now = new DateTime.now();
+      var formatter = new DateFormat('yyyy-MM-dd');
+      String formattedDate = formatter.format(now);
+      if (attendesPS > 18) {
+        if(!students.alerts!.any((element) => element.alertContent=="${getCourse.courseID} | ${getCourse.courseTitle} absent percentage is ${getAttendance.absentsPercentage}")){
+        Alert warning = new Alert(alertContent: "${getCourse.courseID} | ${getCourse.courseTitle} absent percentage is ${getAttendance.absentsPercentage}",
+            alertTitle: "High absent percentage",
+            alertDate: formattedDate.toString(),
+            alertDegree: attendesPS<20? 2: 1 ,
+            realtedCourse: getCourse.courseID);
+        students.alerts?.add(warning);
+      }}
+    }
+  }
+  ScoreAlert(){
+    for(int i = 0 ; i < students.score!.length; i++){
+      Score getScore = students.score![i];
+      // double? scorepersntage = getScore.score;
+      var now = new DateTime.now();
+      var formatter = new DateFormat('yyyy-MM-dd');
+      String formattedDate = formatter.format(now);
+      if(getScore.score! < 60){
+        if(!students.alerts!.any((element) => element.alertContent=="${getScore.scoreName} Score is ${getScore.score}")){
+        Alert lowScoreAlert = new Alert(alertContent: "${getScore.scoreName} Score is ${getScore.score}",
+            alertTitle: "Low ${getScore.scoreName} score",
+            alertDate: formattedDate.toString(),
+            alertDegree: 2,
+            realtedCourse: "General");
+        students.alerts?.add(lowScoreAlert);
+
+      }}
+    }
+  }
   @override
   Widget build(BuildContext context) {
+    alerts();
+    ScoreAlert();
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 15.w,vertical: 15.h),
+      margin: EdgeInsets.symmetric(horizontal: margin == null? 15.w:margin!.w,vertical: 15.h),
       width: 351.w,
       height: 306.h,
       decoration: BoxDecoration(
@@ -107,41 +145,47 @@ class AlertCardWidgtDB extends StatelessWidget {
             children: [
               Expanded(
                   child: Container(
-                padding: EdgeInsets.only(left: 7.w),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      alert.alertTitle,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 24.sp,
-                        fontFamily: 'Tajawal',
-                        color: Colors.black,
-                      ),
+                    padding: EdgeInsets.only(left: 7.w),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          alert.alertTitle,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20.sp,
+                            fontFamily: 'Tajawal',
+                            color: Colors.black,
+                          ),
+                        ),
+                        Container(
+                          width: 292.w,
+                          height: 20.h,
+                          child: SingleChildScrollView(
+                            child: Text(
+                              alert.alertContent +
+                                  ' | ' +
+                                  alert.alertDate,
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14.sp,
+                                fontFamily: 'Tajawal',
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    Text(
-                      alert.alertContent +
-                          ' | ' +
-                         alert.alertDate,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 14.sp,
-                        fontFamily: 'Tajawal',
-                        color: Colors.black,
-                      ),
-                    ),
-                  ],
-                ),
-              )),
+                  )),
               Container(
                 margin: EdgeInsets.only(right: 10.w),
                 width: 20.w,
                 height: 20.h,
                 decoration:
-                    BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                 alignment: Alignment.centerLeft,
                 child: Icon(
                   AAA_Icons_Pack.info,
@@ -181,26 +225,6 @@ class AlertCardWidgtDB extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  width: 35.w,
-                  height: 35.h,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 248, 76, 76),
-                      shape: BoxShape.circle),
-                  child: IconButton(
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    splashColor: Colors.transparent,
-                    padding: EdgeInsets.zero,
-                    onPressed: () {},
-                    icon: Icon(
-                      AAA_Icons_Pack.delete,
-                      color: Colors.white,
-                      size: 20.sp,
-                    ),
-                  ),
-                ),
-                Container(
                   margin: EdgeInsets.only(left: 15.w),
                   width: 30.w,
                   height: 30.h,
@@ -225,7 +249,7 @@ class AlertCardWidgtDB extends StatelessWidget {
                             ' in ' +
                             alert.alertContent +
                             ' at ' +
-                           alert.alertDate,
+                            alert.alertDate,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 16.sp,

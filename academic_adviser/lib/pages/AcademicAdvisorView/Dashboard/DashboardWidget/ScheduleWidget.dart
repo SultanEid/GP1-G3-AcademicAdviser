@@ -1,78 +1,29 @@
+import 'package:academic_adviser/Models/Appointment.dart';
+import 'package:academic_adviser/Models/Course.dart';
 import 'package:academic_adviser/Models/Student.dart';
+import 'package:academic_adviser/pages/ThemeConfigA.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../Models/Appointment.dart';
-import '../../../../Models/Course.dart';
-
-
 class ScheduleWidgetDB extends StatelessWidget {
-  ScheduleWidgetDB({Key? key , required this.student}) : super(key: key);
+  ScheduleWidgetDB({Key? key , required this.student,required this.themeConfig});
   Student student;
-  //
-  // List<Course> list = [
-  //   Course(
-  //     courseTitle: 'Computer Graphics',
-  //     courseCode: 'CS',
-  //     courseNumber: 451,
-  //     courseHour: 4,
-  //     appointment: [
-  //       Appointment(TimeOfDay(hour: 14,minute: 40), TimeOfDay(hour: 16,minute: 10), 'G84', 'B115',2),
-  //       Appointment(TimeOfDay(hour: 15,minute: 0), TimeOfDay(hour: 17,minute: 00), 'Lab9', 'B115',3),
-  //       Appointment(TimeOfDay(hour: 14,minute: 40), TimeOfDay(hour: 16,minute: 10), 'G84', 'B115',4)
-  //     ]
-  //   ),
-  //   Course(
-  //       courseTitle: 'Information Retrieval',
-  //       courseCode: 'CS',
-  //       courseNumber: 471,
-  //       courseHour: 3,
-  //       appointment: [
-  //         Appointment(TimeOfDay(hour: 14,minute: 40), TimeOfDay(hour: 16,minute: 10), 'G32', 'B115',1),
-  //         Appointment(TimeOfDay(hour: 14,minute: 40), TimeOfDay(hour: 16,minute: 10), 'G32', 'B115',5),
-  //       ]
-  //   ),
-  //   Course(
-  //       courseTitle: 'Graduation Project(1)',
-  //       courseCode: 'CS',
-  //       courseNumber: 491,
-  //       courseHour: 1,
-  //       appointment: <Appointment>[]
-  //   ),
-  //   Course(
-  //       courseTitle: 'Introduction To Oriental',
-  //       courseCode: 'ORNT',
-  //       courseNumber: 101,
-  //       courseHour: 2,
-  //       appointment: [
-  //         Appointment(TimeOfDay(hour: 9,minute: 00), TimeOfDay(hour: 10,minute: 00), 'Blackboard', '',2),
-  //         Appointment(TimeOfDay(hour: 10,minute: 00), TimeOfDay(hour: 11,minute: 00), 'Blackboard', '',2),
-  //       ]
-  //   ),
-  //   Course(
-  //       courseTitle: 'Islamic Studies',
-  //       courseCode: 'GS',
-  //       courseNumber: 101,
-  //       courseHour: 2,
-  //       appointment: [
-  //         Appointment(TimeOfDay(hour: 9,minute: 00), TimeOfDay(hour: 10,minute: 00), 'Blackboard', '',3),
-  //         Appointment(TimeOfDay(hour: 10,minute: 00), TimeOfDay(hour: 11,minute: 00), 'Blackboard', '',3),
-  //       ]
-  //   ),
-  //   Course(
-  //       courseTitle: 'Calculus(1)',
-  //       courseCode: 'MATH',
-  //       courseNumber: 203,
-  //       courseHour: 3,
-  //       appointment: [
-  //         Appointment(TimeOfDay(hour: 13,minute: 00), TimeOfDay(hour: 14,minute: 30), 'G32', 'B115',1),
-  //         Appointment(TimeOfDay(hour: 13,minute: 00), TimeOfDay(hour: 14,minute: 30), 'G32', 'B115',5),
-  //       ]
-  //   ),
-  // ];
+  ThemeConfig themeConfig;
+  int totalCredit(){
+    int totalHours=0;
+    for(int i = 0 ; i <student.currentStudyingCourses.length ; i++){
+      Course getCourse = student.currentStudyingCourses[i];
+      int getHours = getCourse.courseHour;
+       totalHours += getHours;
+    }
+
+    return totalHours;
+  }
+
 
   @override
   Widget build(BuildContext context) {
+    totalCredit();
     return Container(
       alignment: Alignment.topCenter,
       width: 732.w,
@@ -88,7 +39,7 @@ class ScheduleWidgetDB extends StatelessWidget {
             children: [
               Expanded(
                   child: Text(
-                    'Total Hours: ' + "15E",
+                    'Total Hours: ' + totalCredit().toString(),
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -106,10 +57,7 @@ class ScheduleWidgetDB extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                    colors: [
-                      Color.fromARGB(255, 96, 220, 220),
-                      Color.fromARGB(255, 114, 72, 185),
-                    ]
+                    colors: themeConfig.primaryGradientColor
                   )
                 ),
                 child: Row(

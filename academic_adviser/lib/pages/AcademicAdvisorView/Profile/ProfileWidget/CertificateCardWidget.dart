@@ -1,5 +1,5 @@
 import 'package:academic_adviser/Models/Certificate.dart';
-import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -26,8 +26,8 @@ class CertificateCardWidget extends StatelessWidget {
             width: 70.w,
             height: 82.h,
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 75, 75, 75),
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(7.w),bottomLeft: Radius.circular(7.w))
+                color: Color.fromARGB(255, 75, 75, 75),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(7.w),bottomLeft: Radius.circular(7.w))
             ),
             child: Icon(
               AAA_Icons_Pack.report,
@@ -60,23 +60,47 @@ class CertificateCardWidget extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
-                  child: Container(
-                    alignment: Alignment.bottomLeft,
-                    child: Text(
-                      CertificatesInfoIndex.date!,
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontFamily: 'Tajawal',
-                        fontSize: 11.sp,
-                        color: Color.fromARGB(255, 87, 87, 87),
+                    flex: 2,
+                    child: Container(
+                      alignment: Alignment.bottomLeft,
+                      child: Text(
+                        CertificatesInfoIndex.date!,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                          fontFamily: 'Tajawal',
+                          fontSize: 11.sp,
+                          color: Color.fromARGB(255, 87, 87, 87),
+                        ),
                       ),
-                    ),
-                  )
+                    )
                 )
               ],
             ),
           ),
+          Expanded(child: Container(
+            margin: EdgeInsets.only(top: 5.h,right: 5.w),
+            alignment: Alignment.topRight,
+            child: Container(
+              width: 20.w,
+              height: 22.h,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 248, 76, 76),
+                shape: BoxShape.circle,
+              ),
+              child: IconButton(
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                padding: EdgeInsets.zero,
+                onPressed: () {
+
+                }, icon: Icon(AAA_Icons_Pack.delete,
+                color: Colors.white,
+                size: 20.sp,),
+              ),
+            ),
+          ))
         ],
       ),
     );
