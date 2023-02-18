@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignInLogoSection extends StatelessWidget {
   const SignInLogoSection({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -11,10 +10,12 @@ class SignInLogoSection extends StatelessWidget {
         width: 588.w,
         height: 590.h,
         decoration: BoxDecoration(
+          color:  Color.fromARGB(255, 212, 232, 242),
             image: DecorationImage(
                 image: AssetImage(
                   "assets/images/BackgroundImage/SignInCard.png",
                 ),
+                opacity: 1,
                 fit: BoxFit.fitHeight),
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(49.w),

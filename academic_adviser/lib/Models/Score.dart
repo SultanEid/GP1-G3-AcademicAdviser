@@ -9,6 +9,7 @@ class Score {
   int _excellentPercent = 100;
   late int _goodPercent;
   late int _badPercent;
+  String? _scoreID;
 
   Score(
       {required String scoreName,
@@ -17,13 +18,24 @@ class Score {
         required List<double> coursesPercentage,
         required int goodPercent,
         required int badPercent,
+        String? scoreID,
+        double? score,
       }):_scoreName=scoreName,
-  _scoreDescription=scoreDescription,
-  _scoreCourses=scoreCourses,
-  _coursesPercentage=coursesPercentage,
+        _scoreDescription=scoreDescription,
+        _scoreCourses=scoreCourses,
+        _coursesPercentage=coursesPercentage,
         _goodPercent = goodPercent,
-  _badPercent = badPercent{
-    _score = 0;// to be removed also _goodPercent and _badPercent
+        _badPercent = badPercent,
+        _scoreID=scoreID,
+        _score=score
+  {// to be removed also _goodPercent and _badPercent
+  }
+
+
+  String? get scoreID => _scoreID;
+
+  set scoreID(String? value) {
+    _scoreID = value;
   }
 
   int get badPercent => _badPercent;

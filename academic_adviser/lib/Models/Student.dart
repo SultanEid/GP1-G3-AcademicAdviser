@@ -1,3 +1,4 @@
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
 import 'package:academic_adviser/Models/Note.dart';
 import 'package:academic_adviser/Models/Profile.dart';
 import 'package:academic_adviser/Models/Score.dart';
@@ -15,6 +16,13 @@ class Student extends AAAUser {
   List<Score>? _score;
   List<Note>? _notes;
   List<Alert>? _alerts;
+  int? _warningsNumber = 0;
+  int? _visitsNumber = 0;
+  int? _delaysNumber = 0;
+  int? _apologiesNumber = 0;
+  int? _withdrawalsNumber = 0;
+  int? _reenrolmentsNumber = 0;
+  AcademicAdvisor? _academicAdvisor;
 
   Student({
     required String uid,
@@ -30,9 +38,16 @@ class Student extends AAAUser {
     required int planHours,
     required List<Course> currentStudyingCourses,
     required List<Course> finishedCourses,
+    AcademicAdvisor? academicAdvisor,
     List<Score>? score,
     List<Note>? notes,
     List<Alert>? alerts,
+    int? warningsNumber,
+    int? visitsNumber,
+    int? delaysNumber,
+    int? apologiesNumber,
+    int? withdrawalsNumber,
+    int? reenrolmentsNumber,
   })  : _gpa = gpa,
         _totalHours = totalHours,
         _registeredHours = registeredHours,
@@ -42,15 +57,40 @@ class Student extends AAAUser {
         _score = score,
         _notes = notes,
         _alerts = alerts,
+        _warningsNumber = warningsNumber,
+        _visitsNumber = visitsNumber,
+        _delaysNumber = delaysNumber,
+        _apologiesNumber = apologiesNumber,
+        _withdrawalsNumber = withdrawalsNumber,
+        _reenrolmentsNumber = reenrolmentsNumber,
+        _academicAdvisor = academicAdvisor,
         super(
-          uid: uid,
-          firstName: firstName,
-          lastName: lastName,
-          academicID: studentID,
-          academicEmail: studentEmail,
-          phone: studentPhone,
-          profile: studentProfile,
-        );
+        uid: uid,
+        firstName: firstName,
+        lastName: lastName,
+        academicID: studentID,
+        academicEmail: studentEmail,
+        phone: studentPhone,
+        profile: studentProfile,
+      );
+
+  AcademicAdvisor? get academicAdvisor => _academicAdvisor;
+
+  set academicAdvisor(AcademicAdvisor? value) {
+    _academicAdvisor = value;
+  }
+
+  int? get visitsNumber => _visitsNumber;
+
+  set visitsNumber(int? value) {
+    _visitsNumber = value;
+  }
+
+  int? get warningsNumber => _warningsNumber;
+
+  set warningsNumber(int? value) {
+    _warningsNumber = value;
+  }
 
   List<Alert>? get alerts => _alerts;
 
@@ -104,5 +144,29 @@ class Student extends AAAUser {
 
   set gpa(double value) {
     _gpa = value;
+  }
+
+  int? get delaysNumber => _delaysNumber;
+
+  set delaysNumber(int? value) {
+    _delaysNumber = value;
+  }
+
+  int? get apologiesNumber => _apologiesNumber;
+
+  set apologiesNumber(int? value) {
+    _apologiesNumber = value;
+  }
+
+  int? get withdrawalsNumber => _withdrawalsNumber;
+
+  set withdrawalsNumber(int? value) {
+    _withdrawalsNumber = value;
+  }
+
+  int? get reenrolmentsNumber => _reenrolmentsNumber;
+
+  set reenrolmentsNumber(int? value) {
+    _reenrolmentsNumber = value;
   }
 }
