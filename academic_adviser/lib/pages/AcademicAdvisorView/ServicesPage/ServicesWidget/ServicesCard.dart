@@ -1,17 +1,16 @@
-
-import 'package:academic_adviser/pages/AcademicAdvisorView/ServicesPage/ServicesWidget/CardButton.dart';
-import 'package:academic_adviser/pages/ThemeConfigA.dart';
+import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+
+import 'CardButton.dart';
+
 class ServicesCard extends StatelessWidget {
-  ServicesCard({Key? key, required this.label, required this.icon, required this.children, required this.Route, required this.themeConfig});
+  const ServicesCard({Key? key, required this.label, required this.icon, required this.children, required this.Route}) : super(key: key);
   final String label;
   final List<TextSpan> children;
   final IconData icon;
   final Widget Route;
-  ThemeConfig themeConfig;
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,7 +41,10 @@ class ServicesCard extends StatelessWidget {
             ),
             gradientType: GradientType.linear,
             gradientDirection: GradientDirection.ltr,
-            colors: themeConfig.primaryGradientColor,
+            colors: [
+              Color.fromARGB(255, 96, 220, 220),
+              Color.fromARGB(255, 114, 72, 185),
+            ],
           ),
           SizedBox(
             height: 18.5.h,
@@ -65,7 +67,7 @@ class ServicesCard extends StatelessWidget {
           SizedBox(
             height: 21.h,
           ),
-          CardButton(label: label, Route: Route,themeConfig: themeConfig),
+          CardButton(label: label, Route: Route,),
         ],
       ),
     );
