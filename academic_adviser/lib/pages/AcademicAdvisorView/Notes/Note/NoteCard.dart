@@ -1,86 +1,86 @@
 import 'package:academic_adviser/Models/AcademicAdvisor.dart';
-import 'package:academic_adviser/Models/LoadingWidget.dart';
-import 'package:academic_adviser/Models/Note.dart';
-import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
+import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class NoteCard extends StatefulWidget {
-   NoteCard(
-      {Key? key,
-        required this.color,
-        required this.user,
-        required this.selectedName,
-        required this.index,
-        required this.onPress,
-         this.note,
-        required this.noteContent,
-        required this.reciver,
-      })
-      : super(key: UniqueKey());
-   Color? color;
-  Note? note;
-  AcademicAdvisor user;
-  int selectedName;
-   int index;
-  VoidCallback onPress;
-  String reciver;
-  String noteContent;
-
-
-  @override
-  State<NoteCard> createState() => _NotesState(color: color , user: user , selectedName: selectedName , index: index,onPress: onPress,reciver: reciver,noteContent: noteContent,);
-}
-
-class _NotesState extends State<NoteCard> {
-  _NotesState(
-      {Key? key,
-        required this.color,
-        required this.user,
-        required this.selectedName,
-        required this.index,
-        required this.onPress,
-         this.note,
-        required this.noteContent,
-        required this.reciver,
-      });
-   Color? color;
-  Note? note;
+  NoteCard({
+    Key? key,
+    required this.color,
+    required this.user,
+    required this.selectedName,
+    required this.index,
+    required this.noteIndexMap,
+    required this.userNoteMap,
+    required this.userID,
+    required this.retriveAfterDelete,
+  }) : super(key: UniqueKey());
+  Color? color;
   AcademicAdvisor user;
   int selectedName;
   int index;
-  VoidCallback onPress;
-  String noteContent;
-  String? text;
-  String reciver;
-  bool? NoteState=false;
-  String? NoteID;
-  Key key= UniqueKey();
+  Map<String, dynamic> noteIndexMap;
+  Map<String, dynamic> userNoteMap;
+  String userID;
+  VoidCallback retriveAfterDelete;
 
+  @override
+  State<NoteCard> createState() => _NotesState(
+    color: color,
+    user: user,
+    selectedName: selectedName,
+    index: index,
+    noteIndexMap: noteIndexMap,
+    userNoteMap: userNoteMap,
+    userID: userID,
+    retriveAfterDelete: retriveAfterDelete,
+  );
+}
 
-    DatabaseReference DBR =  FirebaseDatabase.instance.ref("Student");
+class _NotesState extends State<NoteCard> {
+  _NotesState({
+    Key? key,
+    required this.color,
+    required this.user,
+    required this.selectedName,
+    required this.index,
+    required this.noteIndexMap,
+    required this.userNoteMap,
+    required this.userID,
+    required this.retriveAfterDelete,
+  });
+  Color? color;
+  AcademicAdvisor user;
+  int selectedName;
+  int index;
+  Key key = UniqueKey();
+  Map<String, dynamic> noteIndexMap;
+  Map<String, dynamic> userNoteMap;
+  String userID;
+  String? noteInput;
+  VoidCallback retriveAfterDelete;
+  int emptyNotes=0;
+  String? _selectedNotetype;
 
-  //  void AddNote(String uid){
-  //
-  //  DBR.child(uid).child("UserNotes").once().then((DataSnapshot) {
-  //     Map<String,dynamic>? data = DataSnapshot.snapshot.value as Map<String, dynamic>?;
-  //     List<dynamic>? keyList = List.from(data!.keys);
-  //     print(keyList);
-  //   });
-  // }
-
-  //  void AddNote(String uid){
-  //
-  //    Query query = FirebaseDatabase.instance.ref("Student").child(uid).child("UserNotes").orderByKey();
-  //    query.once().then((DataSnapshot snapshot) {
-  //    });
-  // }
-
+  Future<String> DeleteNote(String NoteID) async {
+    await FirebaseDatabase.instance
+        .ref("Student")
+        .child(user.student[selectedName].uid)
+        .child("StudentNotes")
+        .child(NoteID)
+        .remove();
+    if(userNoteMap.length+1==1){
+      emptyNotes=1;
+    }
+    return "Deleteddddddddddddddddddddddddddddddddddddddddddddd";
+  }
 
   @override
   Widget build(BuildContext context) {
-    print("A");
-    print(index);
+    noteInput = noteIndexMap["Text"].toString();
+    _selectedNotetype =noteIndexMap["Reciver"].toString();
+
     return Container(
         alignment: Alignment.center,
         margin: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
@@ -94,7 +94,7 @@ class _NotesState extends State<NoteCard> {
           splashColor: Colors.transparent,
           focusColor: Colors.transparent,
           highlightColor: Colors.transparent,
-          hoverElevation:0,
+          hoverElevation: 0,
           highlightElevation: 0,
           elevation: 0,
           onPressed: () {
@@ -110,7 +110,7 @@ class _NotesState extends State<NoteCard> {
                   children: [
                     Expanded(
                       child: Text(
-                        reciver,
+                        noteIndexMap["Reciver"].toString(),
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 15.sp,
@@ -121,8 +121,8 @@ class _NotesState extends State<NoteCard> {
                       ),
                     ),
                     Container(
-                      width: 20.w,
-                      height: 20.h,
+                      width: 35.w,
+                      height: 35.h,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 248, 76, 76),
@@ -133,57 +133,30 @@ class _NotesState extends State<NoteCard> {
                         splashColor: Colors.transparent,
                         padding: EdgeInsets.zero,
                         onPressed: () {
+                          DeleteNote(noteIndexMap["NoteID"].toString());
                           setState(() {
-                            // user.student[selectedName].notes?.removeAt(index);
-                            // AddNote(user.student[selectedName].uid);
-                            // String indexPath = index.toString();
-                            // FirebaseDatabase.instance.ref("Student").child(user.student[selectedName].uid).child("UserNotes").child(indexPath).remove();
-                            // Map<dynamic ,dynamic> studentNote = {
-                            //   'NoteID': "S1",
-                            //   'NoteState' :true,
-                            //   'Reciver':"Student",
-                            //   'Text': "Hi adding from code",
-                            // };
-                            // DatabaseReference DBR =  FirebaseDatabase.instance.ref("Student").child(user.student[selectedName].uid).child("UserNotes").child("1").push();
-                            //
-                            // // DatabaseReference DBR =  FirebaseDatabase.instance.ref("Student").child(user.student[selectedName].uid).child("UserNotes").push();
-                            // DBR.set({
-                            //   'NoteID': "S1",
-                            //   'NoteState' :true,
-                            //   'Reciver':"Student",
-                            //   'Text': "Hi adding from code",
-                            // });
-                            print(DBR.key);
-                            onPress();
+                            retriveAfterDelete();
                           });
+
                         },
                         icon: Icon(
                           AAA_Icons_Pack.delete,
                           color: Colors.white,
-                          size: 14.sp,
+                          size: 20.sp,
                         ),
                       ),
                     ),
-                    Container(
-                      width: 20.w,
-                      height: 20.h,
-                      child: Icon(
-                        AAA_Icons_Pack.notification,
-                        color: Colors.white,
-                        size: 14.sp,
-                      ),
-                    ),
+
                   ],
                 ),
               ),
               Padding(
-                  padding:
-                  EdgeInsets.symmetric(vertical: 7.h, horizontal: 10.w),
+                  padding: EdgeInsets.symmetric(vertical: 7.h, horizontal: 10.w),
                   child: Container(
                     width: 459.w,
-                    height: 90.h,
+                    height: 77.h,
                     child: Text(
-                      noteContent,
+                      noteIndexMap["Text"],
                       textAlign: TextAlign.left,
                       style: TextStyle(
                         fontSize: 15.sp,
@@ -196,6 +169,7 @@ class _NotesState extends State<NoteCard> {
           ),
         ));
   }
+
   Future openDialog(BuildContext context) {
     return showDialog(
         context: context,
@@ -208,7 +182,7 @@ class _NotesState extends State<NoteCard> {
               children: [
                 Expanded(
                   child: Text(
-                    reciver,
+                    noteIndexMap["Reciver"],
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontSize: 25.sp,
@@ -230,7 +204,16 @@ class _NotesState extends State<NoteCard> {
                     highlightColor: Colors.transparent,
                     splashColor: Colors.transparent,
                     padding: EdgeInsets.zero,
-                    onPressed: () {},
+                    onPressed: () {
+
+                      DeleteNote(noteIndexMap["NoteID"].toString());
+                      setState(() {
+                        retriveAfterDelete();
+                      });
+                      Navigator.pop(context);
+
+
+                    },
                     icon: Icon(
                       AAA_Icons_Pack.delete,
                       color: Colors.white,
@@ -238,15 +221,7 @@ class _NotesState extends State<NoteCard> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 35.w,
-                  height: 35.h,
-                  child: Icon(
-                    AAA_Icons_Pack.notification,
-                    color: Colors.white,
-                    size: 20.sp,
-                  ),
-                ),
+
               ],
             ),
             content: Container(
@@ -255,7 +230,7 @@ class _NotesState extends State<NoteCard> {
                   children: [
                     Expanded(
                       child: Text(
-                        noteContent,
+                        noteIndexMap["Text"],
                         textAlign: TextAlign.left,
                         style: TextStyle(
                           fontSize: 16.sp,

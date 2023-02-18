@@ -1,46 +1,11 @@
-import 'package:academic_adviser/Models/Score.dart';
 import 'package:academic_adviser/Models/Student.dart';
-import 'package:fl_chart/fl_chart.dart';
+import 'package:academic_adviser/pages/ThemeConfigA.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:syncfusion_flutter_gauges/gauges.dart';
-
-class ScoresDB extends StatelessWidget {
-  ScoresDB({Key? key , required this.student}) : super(key: key);
+class ScoresDB extends StatelessWidget{
+ScoresDB({Key? key , required this.student, required this.themeConfig});
   Student student;
-
-  // List<Score> list = [
-  //   Score(
-  //     goodPercent: 67,
-  //     badPercent: 40,
-  //     scoreTag: 'Programming',
-  //     scoreDescription:
-  //         'Programming indicator score is measuring programming skills and scores.',
-  //     plo: [
-  //       CourseDegreePLO(
-  //         courseName: 'CS 103',
-  //         courseDgree: 95,
-  //         PLOPercent: 10,
-  //       ),
-  //       CourseDegreePLO(
-  //         courseName: 'CS 111',
-  //         courseDgree: 90,
-  //         PLOPercent: 30,
-  //       ),
-  //       CourseDegreePLO(
-  //         courseName: 'CS 112',
-  //         courseDgree: 99,
-  //         PLOPercent: 20,
-  //       ),
-  //       CourseDegreePLO(
-  //         courseName: 'CS 211',
-  //         courseDgree: 95,
-  //         PLOPercent: 40,
-  //       )
-  //     ],
-  //   ),
-  // ];
-
+  ThemeConfig themeConfig;
   List<Color> colorsPlus = [
     Color.fromARGB(255, 114, 72, 185),
     Color.fromARGB(255, 96, 220, 220),
@@ -49,13 +14,10 @@ class ScoresDB extends StatelessWidget {
     Color.fromARGB(255, 159, 72, 185),
     Color.fromARGB(255, 158, 177, 72),
   ];
-  List<Color> colors = [
-    Color.fromARGB(255, 96, 220, 220),
-    Color.fromARGB(255, 114, 72, 185),
-  ];
 
   @override
   Widget build(BuildContext context) {
+    student.score!.removeWhere((element) => element.scoreName=="Empty");
     return Container(
       margin: EdgeInsets.symmetric(vertical: 15.h, horizontal: 15.w),
       padding: EdgeInsets.only(top: 15.h),
@@ -187,7 +149,7 @@ class ScoresDB extends StatelessWidget {
                           height: 10.h,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(3.sp),
-                            gradient: LinearGradient(colors: colors),
+                            gradient: LinearGradient(colors: themeConfig.primaryGradientColor),
                           ))
                     ],
                   ),
@@ -253,7 +215,7 @@ class ScoresDB extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: colors,
+                    colors: themeConfig.primaryGradientColor,
                   )
               ),
             ),
@@ -279,9 +241,10 @@ class SingleScoreRadial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.only(left: 15.w, right: 15.w),
-        height: 75.h,
+        height: 90.h,
         width: 80.w,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               height: (55).h,
@@ -304,7 +267,7 @@ class SingleScoreRadial extends StatelessWidget {
             ),
             Text(
               title,
-              textAlign: TextAlign.left,
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontFamily: 'Tajawal',
                   fontSize: 12.sp,

@@ -1,10 +1,6 @@
-import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:academic_adviser/Models/Student.dart';
+import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../Models/Student.dart';
-
 class ProfileWidgetR extends StatelessWidget {
    ProfileWidgetR({Key? key, required this.student, required this.width, required this.height}) : super(key: key);
   final double width;
