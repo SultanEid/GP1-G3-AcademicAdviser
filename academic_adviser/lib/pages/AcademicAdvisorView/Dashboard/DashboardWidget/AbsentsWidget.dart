@@ -1,3 +1,6 @@
+import 'package:academic_adviser/Models/AcademicAdvisor.dart';
+import 'package:academic_adviser/Models/Attendance.dart';
+import 'package:academic_adviser/Models/Course.dart';
 import 'package:academic_adviser/Models/Student.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +9,137 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class AbsentsChartDB extends StatelessWidget {
-  AbsentsChartDB({Key? key ,required this.students,required this.isReport}) : super(key: key);
+  AbsentsChartDB({Key? key ,required this.students}) : super(key: key);
   Student students;
-  List<Color> colors = [Color.fromARGB(255, 96, 220, 220), Color.fromARGB(255, 114, 72, 185),];
-  bool isReport;
+  // List<List<Course>> getCurrentStudyCourses;
+  // List<Attendance> getAttendance;
+
+
+  //
+  // Student std = Student(
+  //     currentStudyCourses: [
+  //       Course(
+  //         courseTitle: 'Computer Graphics',
+  //         courseCode: 'CS',
+  //         courseNumber: 451,
+  //         courseHour: 4,
+  //         level: 2,
+  //         grade: 43,
+  //       ),
+  //       Course(
+  //         courseTitle: 'Information Retrieval',
+  //         courseCode: 'CS',
+  //         courseNumber: 471,
+  //         courseHour: 3,
+  //         level: 8,
+  //         grade: 75,
+  //       ),
+  //       Course(
+  //         courseTitle: 'Graduation Project(1)',
+  //         courseCode: 'CS',
+  //         courseNumber: 491,
+  //         courseHour: 1,
+  //         level: 1,
+  //         grade: 95,
+  //       ),
+  //       Course(
+  //         courseTitle: 'Introduction To Oriental',
+  //         courseCode: 'ORNT',
+  //         courseNumber: 101,
+  //         courseHour: 2,
+  //         level: 12,
+  //         grade: 71,
+  //       ),
+  //       Course(
+  //         courseTitle: 'Islamic Studies',
+  //         courseCode: 'GS',
+  //         courseNumber: 101,
+  //         courseHour: 2,
+  //         level: 3,
+  //         grade: 95,
+  //       ),
+  //       Course(
+  //         courseTitle: 'Calculus(1)',
+  //         courseCode: 'MATH',
+  //         courseNumber: 203,
+  //         courseHour: 3,
+  //         level: 15,
+  //         grade: 93,
+  //       ),
+  //     ],
+  //     attendance: [
+  //       Attendance(
+  //           course: Course(
+  //             courseTitle: 'Computer Graphics',
+  //             courseCode: 'CS',
+  //             courseNumber: 451,
+  //             courseHour: 4,
+  //             level: 2,
+  //             grade: 43,
+  //           ),
+  //           absentsPercentage: 13
+  //       ),
+  //       Attendance(
+  //           course: Course(
+  //             courseTitle: 'Information Retrieval',
+  //             courseCode: 'CS',
+  //             courseNumber: 471,
+  //             courseHour: 3,
+  //             level: 8,
+  //             grade: 75,
+  //           ),
+  //           absentsPercentage: 15
+  //       ),
+  //       Attendance(
+  //           course: Course(
+  //             courseTitle: 'Graduation Project(1)',
+  //             courseCode: 'CS',
+  //             courseNumber: 491,
+  //             courseHour: 1,
+  //             level: 1,
+  //             grade: 95,
+  //           ),
+  //           absentsPercentage: 1
+  //       ),
+  //       Attendance(
+  //           course: Course(
+  //             courseTitle: 'Introduction To Oriental',
+  //             courseCode: 'ORNT',
+  //             courseNumber: 101,
+  //             courseHour: 2,
+  //             level: 12,
+  //             grade: 71,
+  //           ),
+  //           absentsPercentage: 3
+  //       ),
+  //       Attendance(
+  //           course: Course(
+  //             courseTitle: 'Islamic Studies',
+  //             courseCode: 'GS',
+  //             courseNumber: 101,
+  //             courseHour: 2,
+  //             level: 3,
+  //             grade: 95,
+  //           ),
+  //           absentsPercentage: 26
+  //       ),
+  //       Attendance(
+  //           course: Course(
+  //             courseTitle: 'Calculus(1)',
+  //             courseCode: 'MATH',
+  //             courseNumber: 203,
+  //             courseHour: 3,
+  //             level: 15,
+  //             grade: 93,
+  //           ),
+  //           absentsPercentage: 9
+  //       ),
+  //     ]);
+
+  List<Color> colors = [
+    Color.fromARGB(255, 96, 220, 220),
+    Color.fromARGB(255, 114, 72, 185),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +254,9 @@ class AbsentsChartDB extends StatelessWidget {
           alignment: BarChartAlignment.center,
           minY: 0,
           maxY: 35,
-          groupsSpace: (((isReport? 510.w:850.w) - (students.currentStudyingCourses.length * (16.w))) / students.currentStudyingCourses.length+1).w,
+          groupsSpace: ((1085.w -
+              (students.currentStudyingCourses.length * (16.w))) /
+              students.currentStudyingCourses.length).w,
           barTouchData: BarTouchData(enabled: true),
           barGroups: students.currentStudyingCourses
               .asMap()
@@ -134,15 +266,19 @@ class AbsentsChartDB extends StatelessWidget {
                 x: entry.key,
                 barRods: [
                   BarChartRodData(
-                      y: students.currentStudyingCourses[entry.key].attendance!.absentsPercentage  < 35 ? students.currentStudyingCourses[entry.key].attendance!.absentsPercentage : 30,
+                      y: students.currentStudyingCourses[entry.key].attendance!.absentsPercentage,
                       width: 16.w,
-                      colors: students.currentStudyingCourses[entry.key].attendance!.absentsPercentage > 20 ? [Color.fromARGB(255, 252, 85, 119)] : colors,
-                      gradientColorStops: [0, students.currentStudyingCourses[entry.key].attendance!.absentsPercentage / 35
+                      colors: students.currentStudyingCourses[entry.key].attendance!.absentsPercentage >
+                          20
+                          ? [Color.fromARGB(255, 252, 85, 119)]
+                          : colors,
+                      gradientColorStops: [
+                        0,
+                       students.currentStudyingCourses[entry.key].attendance!.absentsPercentage / 35
                       ],
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(2),
-                          topRight: Radius.circular(2)
-                      )
+                          topRight: Radius.circular(2))
                   )
                 ]
             );

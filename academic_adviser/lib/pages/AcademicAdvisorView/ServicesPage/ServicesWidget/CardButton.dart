@@ -1,15 +1,11 @@
-import 'dart:core';
-import 'package:academic_adviser/pages/ThemeConfigA.dart';
-import 'package:academic_adviser/pages/UniversalWidgetAA/AAA_Icons_Pack.dart';
+import 'package:academic_adviser/pages/UniversalWidget/AAA_Icons_Pack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class CardButton extends StatelessWidget {
-  CardButton({required this.label, this.Route, required this.themeConfig});
+  const CardButton({Key? key, required this.label , required this.Route}) : super(key: key);
   final String label;
-  Widget? Route;
-  final ThemeConfig themeConfig;
+  final Widget Route;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,16 +16,16 @@ class CardButton extends StatelessWidget {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: themeConfig.primaryGradientColor)),
+              colors: [
+                Color.fromARGB(255, 96, 220, 220),
+                Color.fromARGB(255, 114, 72, 185)
+              ])),
       child: SizedBox(
         width: 243.w,
         height: 25.h,
         child: TextButton(
             onPressed: () {
-              Route == null
-                  ? print('null route')
-                  : Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Route!));
+              Navigator.push(context ,MaterialPageRoute(builder: (context) => Route));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
@@ -62,7 +58,8 @@ class CardButton extends StatelessWidget {
                   ),
                 )
               ],
-            )),
+            )
+        ),
       ),
     );
   }

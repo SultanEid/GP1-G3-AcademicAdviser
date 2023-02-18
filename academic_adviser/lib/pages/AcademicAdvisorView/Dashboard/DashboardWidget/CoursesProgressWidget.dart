@@ -1,9 +1,11 @@
+import 'dart:collection';
+
+import 'package:academic_adviser/Models/Course.dart';
 import 'package:academic_adviser/Models/Student.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class ProgressWidgetDB extends StatelessWidget {
   ProgressWidgetDB({required this.student});
@@ -16,39 +18,38 @@ class ProgressWidgetDB extends StatelessWidget {
     Color.fromARGB(255, 220, 96, 96),
     Color.fromARGB(255, 96, 220, 220),
     Color.fromARGB(255, 114, 72, 185),
-    Color.fromARGB(255, 200, 30, 100),
-    Color.fromARGB(255,235, 157, 147),
-    Color.fromARGB(255,91, 169, 150),
-    Color.fromARGB(255,187, 73, 34),
-    Color.fromARGB(255,169, 106, 168),
-    Color.fromARGB(255,244, 59, 213),
-    Color.fromARGB(255,255, 140, 38),
-    Color.fromARGB(255, 40, 90, 200),
   ];
-//finished
-  late List<String> courseCodes = [];  // CS , GS ,,,,
-  late Map<String, List<int>> levelMap = {}; // cs : [3,5,6]
-  late Map<List<int>, List<int>> gradeMap = {}; // [3,5,6] : [44,70,100]
 
-
-  void analyseFinishCourseedCourses() {
+  late List<String> courseCodes = [];
+  late Map<String, List<int>> levelMap = {};
+  late Map<List<int>, List<int>> gradeMap = {};
+/*
+  void analyseFinishedCourses() {
     for (int i = 0; i < student.finishedCourses.length; i++) {
       courseCodes.add(student.finishedCourses[i].courseCode);
-      if (!levelMap.containsKey( student.finishedCourses[i].courseCode )) {
-        levelMap[student.finishedCourses[i].courseCode] = [student.finishedCourses[i].level];
+      if (!levelMap.containsKey(student.finishedCourses[i].courseCode)) {
+        levelMap[student.finishedCourses[i].courseCode] = [
+          student.finishedCourses[i].level
+        ];
       } else {
-        levelMap[student.finishedCourses[i].courseCode] = List.from(levelMap[student.finishedCourses[i].courseCode]!)..addAll([student.finishedCourses[i].level]);
+        levelMap[student.finishedCourses[i].courseCode] =
+            List.from(levelMap[student.finishedCourses[i].courseCode]!)
+              ..addAll([student.finishedCourses[i].level]);
       }
     }
 
     for (int i = 0; i < student.finishedCourses.length; i++) {
-      if (!gradeMap.containsKey(levelMap[student.finishedCourses[i].courseCode])) {
-        gradeMap[levelMap[student.finishedCourses[i].courseCode]!] = [student.finishedCourses[i].grade.floor()];
+      if (!gradeMap
+          .containsKey(levelMap[student.finishedCourses[i].courseCode])) {
+        gradeMap[levelMap[student.finishedCourses[i].courseCode]!] = [
+          student.finishedCourses[i].grade as int
+        ];
       } else {
-        gradeMap[levelMap[student.finishedCourses[i].courseCode]!] = List.from(gradeMap[levelMap[student.finishedCourses[i].courseCode]!]!)..addAll([student.finishedCourses[i].grade.floor()]);
+        gradeMap[levelMap[student.finishedCourses[i].courseCode]!] = List
+            .from(gradeMap[levelMap[student.finishedCourses[i].courseCode]!]!)
+          ..addAll([student.finishedCourses[i].grade as int]);
       }
     }
-
     courseCodes = courseCodes.toSet().toList();
     removeLevelDuplication();
   }
@@ -69,7 +70,7 @@ class ProgressWidgetDB extends StatelessWidget {
             continue;
           }
           if (tempList[j] == tempList[k]) {
-            newGradeList[j] = ((newGradeList[j] + tempGradeList[k]) / 2).floor();
+            newGradeList[j] = ((newGradeList[j] + tempGradeList[k]) / 2) as int;
           }
         }
       }
@@ -95,9 +96,12 @@ class ProgressWidgetDB extends StatelessWidget {
     levelMap = levelMapTemp;
     gradeMap = gradeMapTemp;
   }
+
+
+ */
   @override
   Widget build(BuildContext context) {
-    analyseFinishCourseedCourses();
+    //analyseFinishedCourses();
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(30.sp)),
@@ -120,59 +124,51 @@ class ProgressWidgetDB extends StatelessWidget {
                   width: 1106.w,
                   child: chart(context),
                 ),
-               Container(
-                 height: 120.h,
-                 width: 96.w,
-                 decoration: BoxDecoration(
-                     borderRadius: BorderRadius.circular(7.sp),),
-                 margin: EdgeInsets.only(right: 10.w, top: 10.h),
-                 child:  SingleChildScrollView(
-                   child: Container(
-                     padding: EdgeInsets.symmetric(vertical: 10.h),
-                     alignment: Alignment.centerRight,
-                     width: 96.w,
-                     decoration: BoxDecoration(
-                         borderRadius: BorderRadius.circular(7.sp),
-                         color: Colors.white.withAlpha(180)),
-                     child: Column(
-                       mainAxisAlignment: MainAxisAlignment.start,
-                       children: courseCodes.asMap().entries.map((entry) {
-                         return GestureDetector(
-                           child: Row(
-                             mainAxisAlignment: MainAxisAlignment.center,
-                             crossAxisAlignment: CrossAxisAlignment.center,
-                             children: [
-                               Expanded(
-                                 child: Container(
-                                   padding: EdgeInsets.only(left: 10.w),
-                                   child: Text(
-                                     courseCodes[entry.key],
-                                     textAlign: TextAlign.left,
-                                     style: TextStyle(
-                                         fontFamily: 'Tajawal',
-                                         fontSize: 12.sp,
-                                         color: Colors.black,
-                                         fontWeight: FontWeight.bold),
-                                   ),
-                                 ),
-                               ),
-                               Container(
-                                 margin: EdgeInsets.only(right: 10.w),
-                                 width: 10.w,
-                                 height: 10.h,
-                                 decoration: BoxDecoration(
-                                   borderRadius: BorderRadius.circular(3.sp),
-                                   color: colors[entry.key % colors.length],
-                                 ),
-                               ),
-                             ],
-                           ),
-                         );
-                       }).toList(),
-                     ),
-                   ),
-                 ),
-               ),
+                Container(
+                  margin: EdgeInsets.only(right: 10.w, top: 10.h),
+                  padding: EdgeInsets.symmetric(vertical: 10.h),
+                  alignment: Alignment.centerRight,
+                  width: 96.w,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7.sp),
+                      color: Colors.white.withAlpha(180)),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: courseCodes.asMap().entries.map((entry) {
+                      return GestureDetector(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding: EdgeInsets.only(left: 10.w),
+                                child: Text(
+                                  courseCodes[entry.key],
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      fontFamily: 'Tajawal',
+                                      fontSize: 12.sp,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 10.w),
+                              width: 10.w,
+                              height: 10.h,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(3.sp),
+                                color: colors[entry.key % colors.length],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
                 Container(
                     height: 172.h,
                     width: 1106.w,
@@ -312,7 +308,7 @@ class ProgressWidgetDB extends StatelessWidget {
             barWidth: 5.sp,
             belowBarData: BarAreaData(
                 show: true,
-                colors: [colors[entry.key % colors.length].withAlpha(50)]));
+                colors: [colors[entry.key % colors.length].withAlpha(100)]));
       }).toList(),
     ));
   }

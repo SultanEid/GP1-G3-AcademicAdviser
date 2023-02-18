@@ -207,9 +207,14 @@
       "description": "Play popular games for free",
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_maximal_games_dark-2x.png/1.5.9/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_games_hc-2x.png/1.5.9/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_maximal_games_light-2x.png/1.5.9/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_maximal_games_dark.png/1.5.8/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_games_hc.png/1.5.8/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_maximal_games_light.png/1.5.8/asset"
+         },
+         "raster_icon|flight:msEdgeHubAppGamesNewIcon": {
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_maximal_games_dark-2x.png/1.5.8/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_games_hc-2x.png/1.5.8/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_maximal_games_light-2x.png/1.5.8/asset"
          }
       },
       "id": "96defd79-4015-4a32-bd09-794ff72183ef",
@@ -224,7 +229,8 @@
                "text": "Explore more games to play!"
             }
          },
-         "enabled": true
+         "enabled": false,
+         "enabled|flight:msEdgeHubAppGamesAwarenessPrompts": true
       },
       "on_by_default": true,
       "on_by_default|device:managed": false,
@@ -233,7 +239,7 @@
          "url|flight:msEdgeHubAppGameSearchEnabled": "https://www.msn.com/widgets/fullpage/gaming/widget?experiences=CasualGamesHub&sharedHeader=1&playInSidebar=1&gameSearchEnabled=1",
          "url|flight:msEdgeHubAppPlayGamesInSidebar": "https://www.msn.com/widgets/fullpage/gaming/widget?experiences=CasualGamesHub&sharedHeader=1&playInSidebar=1"
       },
-      "version": "1.5.9"
+      "version": "1.5.8"
    }, {
       "auto_show": {
          "enabled": true,
@@ -253,11 +259,11 @@
          },
          "icon": {
             "raster_icon": {
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_word.png/1.5.19/asset"
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_word.png/1.5.17/asset"
             }
          },
          "location": "hovercard",
-         "name": "Create new document"
+         "name": "Create new Document"
       }, {
          "action": {
             "target": "new_tab",
@@ -266,11 +272,11 @@
          },
          "icon": {
             "raster_icon": {
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_excel.png/1.5.19/asset"
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_excel.png/1.5.17/asset"
             }
          },
          "location": "hovercard",
-         "name": "Create new spreadsheet"
+         "name": "Create new Workbook"
       }, {
          "action": {
             "target": "new_tab",
@@ -279,11 +285,11 @@
          },
          "icon": {
             "raster_icon": {
-               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_power_point.png/1.5.19/asset"
+               "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_power_point.png/1.5.17/asset"
             }
          },
          "location": "hovercard",
-         "name": "Create new presentation"
+         "name": "Create new Presentation"
       }, {
          "action": {
             "target": "sidepane",
@@ -300,14 +306,14 @@
       "description": "Access Microsoft Office apps for free",
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_office.png/1.5.19/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_office_hc.png/1.5.19/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_office.png/1.5.19/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_office.png/1.5.17/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_office_hc.png/1.5.17/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_office.png/1.5.17/asset"
          },
          "raster_icon|flight:msEdgeFreeOfficeShowRebrandingPhaseThreeFeature": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_dark.png/1.5.19/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_hc_dark.png/1.5.19/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_light.png/1.5.19/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_dark.png/1.5.17/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_hc_dark.png/1.5.17/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_M365_light.png/1.5.17/asset"
          }
       },
       "id": "64be4f9b-3b81-4b6e-b354-0ba00d6ba485",
@@ -317,7 +323,7 @@
       "name": "Microsoft 365 (Office)",
       "name|flight:msEdgeFreeOfficeShowRebrandingPhaseThreeFeature": "Microsoft 365",
       "notifications": {
-         "awareness_prompts|flight:msEdgeHubAppOfficeAwarenessPrompts": {
+         "awareness_prompts": {
             "bubble_notifications": {
                "domains": [ "www.office.com" ],
                "text": "Use Microsoft Office for free!"
@@ -331,13 +337,13 @@
          "url": "edge://free-office/?sharedHeader=1",
          "url|flight:msEdgeHubAppOfficeCom": "https://www.office.com"
       },
-      "version": "1.5.19"
+      "version": "1.5.17"
    }, {
       "auto_show": {
          "enabled": true,
          "fallback_notification": {
             "show_count": 5,
-            "text": "View the email you came from in the side pane"
+            "text": "__MSG_auto_show_fallback_notification_text__"
          },
          "fre_notification": {
             "enabled": true,
@@ -385,9 +391,9 @@
       "description": "Check email while staying in your flow",
       "icon": {
          "raster_icon": {
-            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_outlook.png/1.7.2/asset",
-            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_outlook_hc.png/1.7.2/asset",
-            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_outlook.png/1.7.2/asset"
+            "dark_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_outlook.png/1.7.1/asset",
+            "high_contrast": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_fluent_outlook_hc.png/1.7.1/asset",
+            "light_mode": "https://edgeassetservice.azureedge.net/assets/edge_hub_apps_outlook.png/1.7.1/asset"
          }
       },
       "id": "8682d0fa-50b3-4ece-aa5b-e0b33f9919e2",
@@ -398,7 +404,7 @@
       "manifest_version": 3,
       "name": "Outlook",
       "notifications": {
-         "awareness_prompts|flight:msEdgeHubAppOutlookAwarenessPrompts": {
+         "awareness_prompts": {
             "bubble_notifications": {
                "domains": [ "outlook.live.com", "outlook.com", "outlook-sdf.office.com" ],
                "text": "Check your mail while staying in your work flow"
@@ -415,7 +421,7 @@
       },
       "trusted_domains": [ "live.com", "office.com", "microsoftonline.com", "microsoft.com", "office365.com" ],
       "trusted_types": [ "default", "dompurify" ],
-      "version": "1.7.2"
+      "version": "1.7.1"
    }, {
       "default_locale": "en",
       "description": "Empower people to express themselves creatively",
