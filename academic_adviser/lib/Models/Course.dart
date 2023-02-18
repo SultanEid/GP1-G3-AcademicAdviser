@@ -8,10 +8,9 @@ class Course {
   late int _courseHour;
   late String _courseID;
   late int _level;
-  int _grade = 0;
+  int? _grade = 0;
   List<Appointment>? _appointment;
   Attendance? _attendance;
-  List<String>? _prerequisites = [];
 
   Course({
     required String courseTitle,
@@ -20,10 +19,9 @@ class Course {
     required int courseHour,
     required String courseID,
     required int level,
-    required int grade,
+    int? grade,
     List<Appointment>? appointment,
     Attendance? attendance,
-    List<String>? prerequisites
   })  : _courseTitle = courseTitle,
         _courseNumber = courseNumber,
         _courseCode = courseCode,
@@ -32,15 +30,7 @@ class Course {
         _level = level,
         _grade = grade,
         _appointment = appointment,
-        _attendance = attendance,
-        _prerequisites=prerequisites;
-
-
-  List<String>? get prerequisites => _prerequisites;
-
-  set prerequisites(List<String>? value) {
-    _prerequisites = value;
-  }
+        _attendance = attendance;
 
   Attendance? get attendance => _attendance;
 
@@ -54,9 +44,9 @@ class Course {
     _appointment = value;
   }
 
-  int get grade => _grade;
+  int? get grade => _grade;
 
-  set grade(int value) {
+  set grade(int? value) {
     _grade = value;
   }
 

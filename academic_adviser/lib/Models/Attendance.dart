@@ -5,17 +5,15 @@ class Attendance {
   late int _numberOfLecture;
 
   Attendance({
-    required double absent,
-    required double attendance,
-    required int numberOfLecture,
-    required double absentsPercentage,
+        required double absent,
+        required double attendance,
+        required int numberOfLecture
   }): _absent = absent,
         _attendance = attendance,
-        _numberOfLecture = numberOfLecture,
-        _absentsPercentage = absentsPercentage;
-
-
-
+        _numberOfLecture = numberOfLecture
+  {
+    _absentsPercentage = 0;// to be removed
+  }
 
   int get numberOfLecture => _numberOfLecture;
 
