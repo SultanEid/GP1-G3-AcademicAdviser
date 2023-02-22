@@ -13,6 +13,7 @@ The increasing number of college students had significantly contributed to the i
 ![Group 703](https://user-images.githubusercontent.com/80723154/220677464-61760d88-814f-45fd-b9e0-9739193aae8f.png)
 ## Conclusion
 In Conclusion, we developed a system to assist the academic advisor and the student in order to improve the academic advising process. The system has been developed with various features to facilitate the decisions made by the advisor. The quality of the user interface has been tested using a usability testing survey on a number of participants.
-
+## Demo
+https://youtu.be/xbjcysKb_XE
 
 [![Codemagic build status](https://api.codemagic.io/apps/63165cf72923d8720efed16b/my-workflow/status_badge.svg)](https://codemagic.io/apps/63165cf72923d8720efed16b/my-workflow/latest_build) [![CircleCI](https://dl.circleci.com/status-badge/img/gh/SultanEid/GP1-G3-AcademicAdviser/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/SultanEid/GP1-G3-AcademicAdviser/tree/main)
